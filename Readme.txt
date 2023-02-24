@@ -1,6 +1,6 @@
-Thanks for downloading this theme!
+Thanks for viewing and downloading this project!
 
-Theme Name: Medilab
-Theme URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
-Author: BootstrapMade.com
-Author URL: https://bootstrapmade.com
+Project Name: My portfolio
+Theme URL: https://github.com/oscarchiagoziem/portfolio
+Author: Oscar Oguledo
+Author URL: www.oscaroguledodev.github.io
