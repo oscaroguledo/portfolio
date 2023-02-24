@@ -1,6 +1,6 @@
 Thanks for viewing and downloading this project!
 
 Project Name: My portfolio
-Theme URL: https://github.com/oscarchiagoziem/portfolio
+Github URL: https://www.github.com/oscarchiagoziem/portfolio
 Author: Oscar Oguledo
-Author URL: www.oscaroguledodev.github.io
+Author URL: https://www.oscaroguledo.github.io/portfolio
