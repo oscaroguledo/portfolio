@@ -17,6 +17,8 @@ const skills = [
   { title: 'JavaScript', img: 'https://static.vecteezy.com/system/resources/previews/027/127/463/non_2x/javascript-logo-javascript-icon-transparent-free-png.png' },
   { title: 'Python', img: 'https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg' },
   { title: 'Bash', img: 'https://upload.wikimedia.org/wikipedia/commons/8/82/Gnu-bash-logo.svg' },
+  { title: 'Linux', img: 'https://static-00.iconduck.com/assets.00/linux-icon-2048x2048-sy06t4un.png' },
+  { title: 'Windows', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9CBmMBhJy9yrFYET0Zekr7LwB6yqcJAbz2OelIe1XG3tyEiCpy-MqZopex2gkebajRpo&usqp=CAU'},
   { title: 'C', img: 'https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png' },
   { title: 'C++', img: 'https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg' },
   { title: 'C#', img: 'https://static-00.iconduck.com/assets.00/c-sharp-c-icon-1822x2048-wuf3ijab.png' },
@@ -55,46 +57,33 @@ const experiences = [
   {
     company: 'Freelancing, Upwork',
     logo:"https://i.imgur.com/AbcCoLogo.png",
-    position: 'Software Engineer',
-    duration: 'Jan 2019 - Dec 2021',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et ipsum nec metus pretium commodo.',
+    position: 'Software Developer',
+    duration: 'Jan 2018 - Dec 2021',
+    description: 'Development of programs using scripting languages, Databases and OOPs',
   },
   {
     company: 'Nigerian National Petroleum Corporation Ltd, Benin City, Nigeria',
     logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Nigerian_National_Petroleum_Company_logo.svg/220px-Nigerian_National_Petroleum_Company_logo.svg.png",
     position: 'Web Developer/IT personel',
     duration: 'Feb 2021 - October 2021',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et ipsum nec metus pretium commodo.',
+    description: 'Monitoring and maintenance of hardware and software systems in the IT division.',
   },
   {
-    company: 'Tech Solutions Ltd.',
+    company: 'Oahse Ltd. Nigeria',
     logo:"https://i.imgur.com/TechSolutionsLogo.png",
-    position: 'Frontend Developer',
-    duration: 'Mar 2015 - Apr 2017',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et ipsum nec metus pretium commodo.',
+    position: 'Full Stack Engineer',
+    duration: 'Nov 2023 - Current',
+    description: 'Building and development of the applications',
   },
-  {
-    company: 'Global Innovations Inc.',
-    logo:"https://i.imgur.com/GlobalInnovationsLogo.png",
-    position: 'Senior Developer',
-    duration: 'Jun 2012 - Feb 2015',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et ipsum nec metus pretium commodo.',
-  },
-  {
-    company: 'Tech Solutions Ltd.',
-    logo:"https://i.imgur.com/TechSolutionsLogo.png",
-    position: 'Frontend Developer',
-    duration: 'Mar 2015 - Apr 2017',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et ipsum nec metus pretium commodo.',
-  },
-  {
-    company: 'Global Innovations Inc.',
-    logo:"https://i.imgur.com/GlobalInnovationsLogo.png",
-    position: 'Senior Developer',
-    duration: 'Jun 2012 - Feb 2015',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et ipsum nec metus pretium commodo.',
-  },
+  
 ];
+const projects = [
+  { title: 'Project 1', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: 'project1.jpg' },
+  { title: 'Project 2', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: 'project2.jpg' },
+  { title: 'Project 3', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', image: 'project3.jpg' },
+  // Add more projects as needed
+];
+
 
 function App() {
   return (
@@ -102,7 +91,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage myname={myname} skills={skills} />} exact ></Route>
           <Route path="/skills" element={<SkillPage myname={myname} skills={skills} />} exact ></Route>
-          <Route path="/projects" element={<ProjectsPage myname={myname}/>} exact ></Route>
+          <Route path="/projects" element={<ProjectsPage myname={myname} projects={projects}/>} exact ></Route>
           <Route path="/experience" element={<ExperiencePage myname={myname} experiences={experiences} />} exact ></Route>
           <Route path="/education" element={<EducationPage myname={myname} schools={schools}/>} exact ></Route>
           <Route path="/resume" element={<ResumePage myname={myname} />} exact ></Route>
