@@ -1,38 +1,52 @@
-.App {
-  text-align: center;
+/* Styles for the default state of the button */
+.ant-menu-item-active::after {
+    color: aqua !important;
+}
+.ant-menu-title-content a:hover{
+    color: #ff6827 !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.ant-btn {
+    border-color: #ff6827;
+    background-color: #ff6827;
+    cursor: pointer;
+}
+  
+/* Styles for the button on hover ant-btn-primary */
+.ant-btn:hover {
+    color: black  !important;
+    background-color: white !important;
+    border-color: #ff6827 !important;
+}
+  
+/* Styles for the button icon on hover */
+.ant-btn:hover .anticon,
+.ant-btn:focus .anticon,
+.ant-btn:active .anticon {
+    color: black !important; /* Change icon color to black on hover, focus, and active */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Styles for the input border on hover */
+.ant-input:hover,
+.ant-input:focus {
+    box-shadow: none !important;
+    border-color: #ff6827 !important;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  
+.ant-pagination-item:hover,
+.ant-pagination-next:hover,
+.ant-pagination-previous:hover {
+    background-color: #ffd8c7 !important;
 }
-
-.App-link {
-  color: #61dafb;
+.ant-pagination-item-active {
+    border-color: #ff6827 !important;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ant-pagination-item-active a {
+    color: black !important; /* Change text color of active pagination item to black */
+}
+.ant-pagination-item-ellipsis {
+    color: #ffd8c7 !important; /* Change color of ellipsis to match background */
+}
+.ant-pagination-item-link-icon {
+    color: #ff6827 !important; /* Change color of pagination icon */
 }
