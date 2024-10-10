@@ -1,90 +1,99 @@
-import React, { useState, useEffect } from 'react';
-import { Layout, Breadcrumb, Card, Col, Row, Space, Button } from 'antd';
-import { LeftOutlined, RightOutlined, MailOutlined, FacebookOutlined, LinkedinOutlined, WhatsAppOutlined, SlackOutlined } from '@ant-design/icons';
+// src/pages/HomePage.js
+import React from 'react';
+import { Row, Col, Card as AntCard, Typography, Avatar, Divider, Button, Tabs } from 'antd'; // Import necessary components from antd
 
-import HeaderComponent from '../components/Header';
-import FooterComponent from '../components/Footer';
-import bg from '../assets/bg.jpg';
+import useGitHubProfile from '../hooks/useGitHubProfile';
+import TechStack from '../components/TechStack';
+import GitHubData from './Github';
 
-const { Content } = Layout;
+const { Title, Paragraph } = Typography;
+const { TabPane } = Tabs;
 
-// Mapping of platform names to their respective icons
-const platformIcons = {
-    Mail: <MailOutlined style={{ color: '#FD1D1D', fontSize: '1.5rem' }} />,
-    Facebook: <FacebookOutlined style={{ color: '#1877F2', fontSize: '1.5rem' }} />,
-    LinkedIn: <LinkedinOutlined style={{ color: '#0077B5', fontSize: '1.5rem' }} />,
-    Whatsapp: <WhatsAppOutlined style={{ color: '#075E54', fontSize: '1.5rem' }} />,
-    Slack: <SlackOutlined style={{ color: '#E01E5A', fontSize: '1.5rem' }} />,
-};
+const HomePage = ({ ptoken, username }) => {
 
+  const profile = useGitHubProfile(ptoken);
 
-
-const HomePage = ({ myname, skills }) => {
-  const bimg = bg;
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  const navigateLeft = () => {
-    setCurrentImageIndex(prevIndex => (prevIndex === 0 ? skills.length - 1 : prevIndex - 1));
+  const downloadCV = () => {
+    // Replace with the URL or method to download your CV
+    const link = document.createElement('a');
+    link.href = 'path/to/your/cv.pdf'; // Add the correct path to your CV
+    link.download = 'My_CV.pdf'; // Name of the downloaded file
+    link.click();
   };
+  // my complete tech stack tools
+  const tools = [
+    'Python', 'React', 'JavaScript', 'Node', 'Django', 'FastAPI',
+    'Django REST Framework', 'Ninja', 'Pandas', 'NumPy',
+    'MongoDB', 'PostgreSQL', 'MySQL', 'SQLite3', 'Kivy',
+    'HTML', 'CSS', 'jQuery', 'React Native', 'C',
+    'Bash', 'Shell', 'Docker', 'Redis', 'Kafka', 'Django Channels',
+    'AWS', 'Heroku', 'PythonAnywhere', 'Namecheap', 'Git', 'GitHub',
+    'GitLab', 'Figma', 'Bootstrap', 'GraphQL',
+    'RESTful APIs', 'Nginx', 'Celery', 'Flask', 'Scrapy', 'Beautiful Soup',
+    'Jupyter Notebook', 'OpenCV', 'Keras', 'TensorFlow', 'Postman', 'Insomnia',
+    'Pillow', 'SQLite', 'Redis',
+    'JWT', 'OAuth', 'WebSocket', 
+    'TypeScript', 'Redux', 'Microservices', 'Serverless', 'Socket.IO','DigitalOcean', 
+    'CI/CD', 'GitHub Actions', 'Babel',
+    'Apache Kafka', 'Scikit-Learn', 
+    'Matplotlib', 'Seaborn', 'Data Visualization', 
+    'QR Code Generation',
+  ];
 
-  const navigateRight = () => {
-    setCurrentImageIndex(prevIndex => (prevIndex === skills.length - 1 ? 0 : prevIndex + 1));
-  };
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-        navigateRight();
-    }, 4900); // Change color every 4.9 seconds
-
-    return () => clearInterval(intervalId); // Cleanup interval on unmount
-  }, []);
 
   return (
-    <Layout style={{ backgroundImage: `url(${bimg})`, backgroundSize: 'cover' }}>
-      <HeaderComponent myname={myname} />
-      <Content style={{ padding: '0 24px', minHeight: 'calc(89vh - 64px)' }}>
-        <Breadcrumb style={{ margin: '16px 0' }} />
+    <div style={{ padding: '24px', maxWidth: '1200px', margin: '0 auto' }}>
+      {/* Header Section */}
+      <Row gutter={16} style={{ marginBottom: '32px' }}>
+        <Col span={6}>
+          <Avatar size={100} src={profile?.avatar_url} alt="Profile Picture" />
+        </Col>
+        <Col span={18} style={{ textAlign: 'left' }}>
+          <Title level={2}>{profile?.name || username}</Title>
+          <Paragraph><strong>GitHub Username:</strong> {username}</Paragraph>
+          <Paragraph><strong>GitLab Username:</strong> {profile?.gitlab_username || 'N/A'}</Paragraph>
+          <Paragraph><strong>Email:</strong> <a href={`mailto:${profile?.email}`}>{profile?.email || 'N/A'}</a></Paragraph>
+          <Paragraph><strong>LinkedIn:</strong> <a href={profile?.linkedin} target="_blank" rel="noopener noreferrer">{profile?.linkedin || 'N/A'}</a></Paragraph>
+          <Paragraph><strong>Website:</strong> <a href={profile?.website} target="_blank" rel="noopener noreferrer">{profile?.website || 'N/A'}</a></Paragraph>
+          <Button type="primary" onClick={downloadCV} style={{ marginTop: '16px' }}>Download CV</Button>
+        </Col>
+      </Row>
 
-        <Row gutter={[16, 16]} justify="center">
-          <Col xs={24} sm={16} lg={18} xl={16}>
-            <Card
-              hoverable
-              style={{ width: '100%' }}
-              bordered={false}
-            >
-              <h1 style={{ fontWeight: 'bold', fontSize: '2.2rem' }}>{myname}</h1>
-              <p style={{ fontWeight: 'bold', fontSize: '1.2rem' }}>
-                "I am a software engineer with a passion for building beautiful, functional, and scalable applications. A web Developer, Python Developer, React Lover, C Programmer. Object-Oriented Languages. A music enthusiast"
-              </p>
-              <Space>
-                {Object.entries(platformIcons).map(([platform, icon]) => (
-                  <span key={platform}>{icon}</span>
-                ))}
-              </Space>
-            </Card>
-          </Col>
-          <Col xs={24} sm={8} lg={6} xl={4}>
-            <Card
-              bordered={false}
-              cover={<img alt={skills[currentImageIndex].title} src={skills[currentImageIndex].img} height={130}/>}
-              style={{ position: 'relative', height: '200px', padding:20, marginLeft:16 }}
-            >
-              <Space style={{ position: 'absolute', top: '50%', transform: 'translateY(-90%)', left: -30 }}>
-                <Button onClick={navigateLeft}><LeftOutlined /></Button>
-              </Space>
-              <Space style={{ position: 'absolute', top: '50%', transform: 'translateY(-90%)', right: -30 }}>
-                <Button onClick={navigateRight}><RightOutlined /></Button>
-              </Space>
-              <Card.Meta
-                title={skills[currentImageIndex].title}
-                style={{ textAlign: 'center', fontWeight: '100', top: '90%', transform: 'translateY(-50%)' }}
-              />
-            </Card>
-          </Col>
-        </Row>
+      {/* Tabs for Projects */}
+      <Tabs defaultActiveKey="1" style={{ marginBottom: '32px' }}>
+        <TabPane tab="GitHub Projects" key="1">
+          <GitHubData ptoken={ptoken} username={username} />
+        </TabPane>
+        <TabPane tab="GitLab Projects" key="2">
+          <Row gutter={16}>
+            {/* Assuming you have a function to fetch GitLab projects */}
+            {/* Replace with actual GitLab projects logic */}
+            <Col span={24}>
+              <AntCard title="GitLab Project 1" style={{ marginBottom: '16px' }}>
+                <Paragraph>This is a description of GitLab project 1.</Paragraph>
+              </AntCard>
+              <AntCard title="GitLab Project 2" style={{ marginBottom: '16px' }}>
+                <Paragraph>This is a description of GitLab project 2.</Paragraph>
+              </AntCard>
+            </Col>
+          </Row>
+        </TabPane>
+        <TabPane tab="Tech Stack" key="3">
+            <TechStack tools={tools}/>
+        </TabPane>
+      </Tabs>
 
-      </Content>
-      <FooterComponent myname={myname} />
-    </Layout>
+      {/* Tech Stack Section */}
+      <Divider />
+
+      {/* Footer */}
+      <footer style={{ textAlign: 'center', marginTop: '32px', fontSize: '14px' }}>
+        <Paragraph>© {new Date().getFullYear()} {profile?.name || username}. All rights reserved.</Paragraph>
+        <Paragraph>
+          Contact me: <a href={`mailto:${profile?.email}`}>{profile?.email}</a>
+        </Paragraph>
+      </footer>
+    </div>
   );
 };
 
