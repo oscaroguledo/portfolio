@@ -52,9 +52,9 @@ const HomePage = ({ ptoken, username }) => {
           <Title level={2}>{profile?.name || username}</Title>
           <Paragraph><strong>GitHub Username:</strong> {username}</Paragraph>
           <Paragraph><strong>GitLab Username:</strong> {profile?.gitlab_username || 'N/A'}</Paragraph>
-          <Paragraph><strong>Email:</strong> <a href={`mailto:${profile?.email}`}>{profile?.email || 'N/A'}</a></Paragraph>
-          <Paragraph><strong>LinkedIn:</strong> <a href={profile?.linkedin} target="_blank" rel="noopener noreferrer">{profile?.linkedin || 'N/A'}</a></Paragraph>
-          <Paragraph><strong>Website:</strong> <a href={profile?.website} target="_blank" rel="noopener noreferrer">{profile?.website || 'N/A'}</a></Paragraph>
+          <Paragraph><strong>Email:</strong> <a href={`mailto:${profile?.email || 'oscarchiagoziem@gmail.com'}`}>{profile?.email || 'oscarchiagoziem@gmail.com'}</a></Paragraph>
+          <Paragraph><strong>LinkedIn:</strong> <a href={profile?.linkedin || 'https://www.linkedin.com/in/oscar-oguledo-341bb2206'} target="_blank" rel="noopener noreferrer">{profile?.linkedin || 'https://www.linkedin.com/in/oscar-oguledo-341bb2206'}</a></Paragraph>
+          <Paragraph><strong>Website:</strong> <a href={profile?.website || 'https://oscaroguledo.github.io/portfolio/'} target="_blank" rel="noopener noreferrer">{profile?.website || 'https://oscaroguledo.github.io/portfolio/'}</a></Paragraph>
           <Button type="primary" onClick={downloadCV} style={{ marginTop: '16px' }}>Download CV</Button>
         </Col>
       </Row>
