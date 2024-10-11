@@ -52,17 +52,21 @@ export async function decrypt(encryptedData, key) {
 }
 
 // Save key to a text file and trigger download in the browser
-export function saveKeyToFile(key) {
-    const blob = new Blob([key], { type: 'text/plain' }); // Create a blob from the Base64 key
+// Function to save details to a file
+export const saveToFile = (base64Key, ciphertext, iv) => {
+    const content = `Base64 Key: ${base64Key}\nBase64 Ciphertext: ${ciphertext}\nBase64 IV: ${iv}`;
     
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = 'generatedKey.txt';
+    const blob = new Blob([content], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
     
-    document.body.appendChild(link); // Append link to the body
-    link.click(); // Trigger click to start download
-    document.body.removeChild(link); // Remove link from the document
-}
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'encrypted_details.txt'; // Filename for download
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url); // Clean up
+};
 
 // Function to import a CryptoKey from a Base64 string
 export async function importKeyFromBase64(base64Key) {

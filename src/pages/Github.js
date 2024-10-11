@@ -28,6 +28,7 @@ const GitHubData = ({ ptoken, username }) => {
                 <Link to={repo.html_url}>
                   <Card
                     title={repo.name}
+                    to={repo.html_url}
                     description={repo.description}
                   />
                 </Link>
@@ -61,6 +62,7 @@ const GitHubData = ({ ptoken, username }) => {
                         <Link to={repo.html_url}>
                           <Card
                             title={repo.name}
+                            to={repo.html_url}
                             description={repo.description}
                             contribution={repo.contributions.contributions}
                             percentageContribution={repo.contributions.percentage}
@@ -91,6 +93,7 @@ const GitHubData = ({ ptoken, username }) => {
                       <Link to={repo.html_url}>
                         <Card
                           title={repo.name}
+                          to={repo.html_url}
                           description={repo.description}
                           contribution={repo.contributions.contributions}
                           percentageContribution={repo.contributions.percentage}
