@@ -10,46 +10,46 @@ interface Project {
 // Replace these with your actual projects
 const projects: Project[] = [
 {
-  name: 'AI Image Classifier',
-  description:
-  'A deep learning application built with TensorFlow and OpenCV that classifies images into categories with high accuracy.',
-  githubUrl: 'https://github.com/oscaroguledo/ai-image-classifier',
-  tags: ['Python', 'TensorFlow', 'OpenCV']
+  name: 'TodoApp',
+  description: 'A modern, full-stack todo application with a clean React frontend and Express.js backend. Features CRUD operations, search, sorting by priority/due date, pagination, responsive design, and system dark mode support.',
+  githubUrl: 'https://github.com/oscaroguledo/TodoApp',
+  tags: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'Vite']
 },
 {
-  name: 'Task Management API',
-  description:
-  'A RESTful API built with FastAPI and PostgreSQL for managing tasks, with JWT authentication and role-based access control.',
-  githubUrl: 'https://github.com/oscaroguledo/task-management-api',
-  tags: ['FastAPI', 'PostgreSQL', 'Docker']
+  name: 'Health and Fitness Club Management System',
+  description: 'A web-based application for managing health and fitness club operations, including member management, trainer scheduling, class enrollment, equipment maintenance, and fitness goal tracking. Features role-based access for members, trainers, and admins with JWT authentication.',
+  githubUrl: 'https://github.com/oscaroguledo/EGEN5208W-Databases-for-Soft-Engineers',
+  tags: ['PostgreSQL', 'FastAPI', 'React', 'TypeScript', 'SQLAlchemy', 'Docker', 'JWT', 'Python']
 },
 {
-  name: 'E-Commerce Platform',
-  description:
-  'Full-stack e-commerce application with React frontend and Django backend, featuring Stripe payments and real-time inventory.',
-  githubUrl: 'https://github.com/oscaroguledo/ecommerce-platform',
-  tags: ['React', 'Django', 'PostgreSQL', 'Redis']
+  name: 'Public Key Encryption Algorithm',
+  description: 'A Python implementation of a simple public key encryption algorithm featuring key generation, message encryption, and decryption based on cryptographic principles including modular arithmetic and prime number selection. Supports command-line and file input with customizable key lengths.',
+  githubUrl: 'https://github.com/oscaroguledo/publickeyalgorithm',
+  tags: ['Python', 'Cryptography', 'RSA', 'Modular Arithmetic', 'Prime Numbers']
 },
 {
-  name: 'DevOps Pipeline Dashboard',
-  description:
-  'A monitoring dashboard for CI/CD pipelines built with React and Node.js, deployed on DigitalOcean with Docker.',
-  githubUrl: 'https://github.com/oscaroguledo/devops-dashboard',
-  tags: ['React', 'Node.js', 'Docker', 'GitHub Actions']
+  name: 'Firewall',
+  description: 'A Python command-line firewall rule manager that allows users to add, remove, and list firewall rules based on command-line input. Supports IPv4 address ranges, incoming/outgoing traffic bounds, and persists rules to JSON file.',
+  githubUrl: 'https://github.com/oscaroguledo/Firewall',
+  tags: ['Python', 'Firewall', 'CLI', 'Networking', 'JSON']
 },
 {
-  name: 'Real-Time Chat App',
-  description:
-  'WebSocket-powered chat application with typing indicators, read receipts, and MongoDB message persistence.',
-  githubUrl: 'https://github.com/oscaroguledo/realtime-chat',
-  tags: ['Node.js', 'MongoDB', 'TypeScript']
+  name: 'DTA',
+  description: 'A desktop application for document analysis and tracking browser data, built with PyQt5 and Python. Features a Qt-based GUI interface for analyzing documents and monitoring browser activity.',
+  githubUrl: 'https://github.com/oscaroguledo/dta',
+  tags: ['Python', 'PyQt5', 'Qt', 'Document Analysis', 'Browser Data', 'Desktop App']
 },
 {
-  name: 'Portfolio Generator CLI',
-  description:
-  'A command-line tool that generates static portfolio websites from a simple YAML configuration file.',
-  githubUrl: 'https://github.com/oscaroguledo/portfolio-generator',
-  tags: ['Python', 'CLI', 'Jinja2']
+  name: 'Vigenere Cipher in Assembly and C',
+  description: 'An implementation of the Vigenere cipher using both Assembly and C programming languages. Features prime number generation up to a limit with low-level system programming.',
+  githubUrl: 'https://github.com/oscaroguledo/prime_to_a_limit_assembly_and_sc',
+  tags: ['Assembly', 'C', 'Vigenere Cipher', 'Cryptography', 'Makefile']
+},
+{
+  name: 'Webbrowser',
+  description: 'A web browser built in C# with basic browser functionality including refresh, home page, history navigation (next/previous), favorites, and bulk downloads.',
+  githubUrl: 'https://github.com/oscaroguledo/webbrowser',
+  tags: ['C#', 'Web Browser', 'Desktop App', 'WinForms', 'WPF']
 }];
 
 const PROJECTS_PER_PAGE = 3;
