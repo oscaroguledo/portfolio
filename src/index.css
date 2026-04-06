@@ -1,50 +1,34 @@
-/* src/index.css or any global CSS file */
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* @import url() FONT IMPORTS MUST ALWAYS BE AT THE VERY TOP OF THIS FILE, ABOVE THE TAILWIND IMPORTS — DO NOT DELETE THIS COMMENT */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* CRITICAL: THE FOLLOWING TAILWIND IMPORTS MUST NEVER BE DELETED OR REORDERED — DO NOT DELETE THIS COMMENT */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* END TAILWIND IMPORTS — ALL OTHER CSS MUST GO BELOW THIS LINE */
+
+html {
+  scroll-behavior: smooth;
 }
-
-code {
-  font-family: 'Inter', sans-serif;
-  font-style: normal;
+body {
+  @apply bg-background text-text font-sans antialiased selection:bg-accent/30 selection:text-accent;
+  overflow-x: hidden;
 }
-
-:root{
-  --primary-color: #979797; /* Example primary color */
-  --secondary-color: #50555C; /* Example secondary color */
-  --background-color: #1E1E1E;
-  --alt-background-color: #f1f1f1;
-
-  --primary-text-color: #ecf0f1; /* Example text color */
-  --alternate-text-color: #1E1E1E;
-
-  --modal-background-color: #747474;
-  --icon-background-color:var(--modal-background-color);
-
-  --primary-button-background-color:var(--primary-color);
-  --secondary-button-background-color:var(--modal-background-color);
-
-  --white:#F6F6F6;
-  --warning: #FBA70D;
-  --focus-color:var(--background-color);
-
-  --border-radius:2px;
-  --btn-radius: 2px;
-  
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
-#root {
-  width: 100%;
-  height: 100%;
-  /* background-color: var(--background-color); */
-  
+::-webkit-scrollbar-track {
+  @apply bg-background;
 }
-.icon-path {
-  transition: stroke 0.3s, font-weight 0.3s; /* Smooth transition */
+::-webkit-scrollbar-thumb {
+  @apply bg-muted rounded-full border-2 border-background;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-text;
+}
+/* Utilities for text balance */
+.text-balance {
+  text-wrap: balance;
 }
