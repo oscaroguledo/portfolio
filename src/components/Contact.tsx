@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Github, Linkedin, ArrowUpRight } from 'lucide-react';
+import { Mail, Github, Linkedin, ArrowUpRight, Globe } from 'lucide-react';
 export function Contact() {
   const links = [
   {
@@ -20,6 +20,12 @@ export function Contact() {
     href: 'https://www.linkedin.com/in/oscar-oguledo-341bb2206',
     icon: <Linkedin size={20} />,
     value: 'Oscar Oguledo'
+  },
+  {
+    name: 'Portfolio',
+    href: 'https://portfolio.oscarchiagoziem.workers.dev',
+    icon: <Globe size={20} />,
+    value: 'portfolio.oscarchiagoziem.workers.dev'
   }];
 
   return (
