@@ -50,6 +50,12 @@ const projects: Project[] = [
   description: 'A web browser built in C# with basic browser functionality including refresh, home page, history navigation (next/previous), favorites, and bulk downloads.',
   githubUrl: 'https://github.com/oscaroguledo/webbrowser',
   tags: ['C#', 'Web Browser', 'Desktop App', 'WinForms', 'WPF']
+},
+{
+  name: 'Weather-App',
+  description: 'A Python weather application using the Open-Meteo API with support for hourly, daily, current, and 15-minutely weather data. Features pressure level variables (1000hPa to 30hPa), multiple weather models comparison, solar radiation data for PV planning, agricultural monitoring, and marine weather. Includes Pandas DataFrame integration with caching and retry logic.',
+  githubUrl: 'https://github.com/oscaroguledo/Weather-App',
+  tags: ['Python', 'Open-Meteo API', 'Weather Forecast', 'Pandas', 'Data Analysis', 'Meteorology']
 }];
 
 const PROJECTS_PER_PAGE = 3;
