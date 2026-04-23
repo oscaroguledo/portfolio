@@ -109,12 +109,12 @@ export function Contact() {
 
         <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-muted/50 font-mono text-sm text-muted-text">
           <p>
-            © {new Date().getFullYear()} Oscar Oguledo. All rights reserved.
+            © {new Date().getFullYear()} Oscar Oguledo.
           </p>
-          <p className="mt-2 md:mt-0">
+          {/* <p className="mt-2 md:mt-0">
             Designed & Built with <span className="text-accent">React</span> &{' '}
             <span className="text-accent">Tailwind</span>
-          </p>
+          </p> */}
         </div>
       </div>
     </section>);
