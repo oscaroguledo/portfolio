@@ -56,7 +56,14 @@ const projects: Project[] = [
   description: 'A Python weather application using the Open-Meteo API with support for hourly, daily, current, and 15-minutely weather data. Features pressure level variables (1000hPa to 30hPa), multiple weather models comparison, solar radiation data for PV planning, agricultural monitoring, and marine weather. Includes Pandas DataFrame integration with caching and retry logic.',
   githubUrl: 'https://github.com/oscaroguledo/Weather-App',
   tags: ['Python', 'Open-Meteo API', 'Weather Forecast', 'Pandas', 'Data Analysis', 'Meteorology']
-}];
+},
+{
+  name: 'Blog-Platform',
+  description: 'A full-stack blog application built with FastAPI, React, and PostgreSQL. Features user authentication, post management with categories and tags, nested comments, analytics dashboard, and admin panel. Containerized with Docker for easy deployment. Includes comprehensive testing with Pytest for backend and Vitest/Playwright for frontend.',
+  githubUrl: 'https://github.com/oscaroguledo/blog-app-fastapi-react',
+  tags: ['FastAPI', 'React', 'TypeScript', 'PostgreSQL', 'Redis', 'Docker', 'Celery', 'Tailwind CSS', 'Full-Stack']
+}
+];
 
 const PROJECTS_PER_PAGE = 3;
 const cardVariants = {
