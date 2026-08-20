@@ -10,6 +10,13 @@ interface Project {
 // Replace these with your actual projects
 const projects: Project[] = [
 {
+  name: 'distributed-inventory-engine',
+  description: 'A distributed inventory management system built with FastAPI, React, and PostgreSQL. Features real-time inventory tracking. Designed for scalability and high availability in distributed environments.',
+  tags: ['FastAPI', 'React', 'TypeScript', 'PostgreSQL', 'Docker', "redis", 'python'],
+  githubUrl: 'https://github.com/oscaroguledo/distributed-inventory-engine',
+  
+},
+{
   name: 'TodoApp',
   description: 'A modern, full-stack todo application with a clean React frontend and Express.js backend. Features CRUD operations, search, sorting by priority/due date, pagination, responsive design, and system dark mode support.',
   githubUrl: 'https://github.com/oscaroguledo/TodoApp',
