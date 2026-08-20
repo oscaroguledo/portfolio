@@ -12,7 +12,7 @@ const projects: Project[] = [
 {
   name: 'distributed-inventory-engine',
   description: 'A distributed inventory management system built with FastAPI, React, and PostgreSQL. Features real-time inventory tracking. Designed for scalability and high availability in distributed environments.',
-  tags: ['FastAPI', 'TypeScript', 'PostgreSQL', 'Docker', 'Docker Compose', "Redis", 'Python','Uvicorn', 'SQLAlchemy','pytest-asyncio', 'httpx', 'pytest-cov','Ruff'],
+  tags: ['FastAPI', 'TypeScript','Lua', 'PostgreSQL','GitHub Actions', 'Docker', 'Docker Compose', "Redis", 'Python','Uvicorn', 'SQLAlchemy','pytest-asyncio', 'httpx', 'pytest-cov','Ruff'],
   githubUrl: 'https://github.com/oscaroguledo/distributed-inventory-engine',
   
 },
