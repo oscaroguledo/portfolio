@@ -9,12 +9,17 @@ interface Project {
 }
 // Replace these with your actual projects
 const projects: Project[] = [
+  {
+    name: 'movie-reservation-system',
+    description: 'A movie reservation system built with FastAPI, PostgreSQL, and Kafka. Features real-time seat holds with automatic expiry, guest and authenticated bookings, and admin reporting on capacity and revenue. Designed as two independently deployable services connected by an event-driven pipeline, with Postgres as the durable store and Redis as the fast path.',
+    tags: ['FastAPI', 'Uvicorn', 'Pydantic', 'PostgreSQL 16', 'SQLAlchemy (async)', 'asyncpg', 'Alembic', 'Redis 7', 'Apache Kafka', 'aiokafka', 'PyJWT', 'Argon2', 'GitHub Actions', 'Docker', 'Docker Compose', 'Python', 'pytest', 'pytest-asyncio', 'pytest-cov', 'httpx', 'Ruff'],
+    githubUrl: 'https://github.com/oscaroguledo/Movie-Reservation-System',
+  },
 {
   name: 'distributed-inventory-engine',
   description: 'A distributed inventory management system built with FastAPI, React, and PostgreSQL. Features real-time inventory tracking. Designed for scalability and high availability in distributed environments.',
   tags: ['FastAPI', 'Uvicorn', 'Pydantic', 'Redis 7', 'Lua', 'PostgreSQL 16', 'SQLAlchemy (async)', 'asyncpg', 'PgBouncer', 'Prometheus', 'Grafana', 'Alertmanager', 'OpenTelemetry', 'Jaeger', 'redis_exporter', 'postgres_exporter', 'GitHub Actions', 'Docker', 'Docker Compose', 'Python', 'pytest-asyncio', 'httpx', 'pytest-cov', 'Ruff'],
   githubUrl: 'https://github.com/oscaroguledo/distributed-inventory-engine',
-  
 },
 {
   name: 'TodoApp',
