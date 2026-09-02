@@ -3,27 +3,51 @@ import { motion } from 'framer-motion';
 const techCategories = [
 {
   title: 'Languages',
-  skills: ['Python', 'JavaScript', 'TypeScript']
+  skills: ['Python', 'JavaScript', 'TypeScript', 'Java', 'C#', 'C', 'SQL', 'x86-64 Assembly']
 },
 {
-  title: 'Frameworks',
-  skills: ['React', 'Node.js', 'Django', 'FastAPI']
+  title: 'Frontend',
+  skills: ['React', 'Vite', 'Tailwind CSS', 'Framer Motion', 'React Router', 'Recharts']
 },
 {
-  title: 'Databases',
-  skills: ['MongoDB', 'PostgreSQL', 'MySQL', 'SQLite']
+  title: 'Backend',
+  skills: ['FastAPI', 'Spring Boot', 'Node.js', 'Express.js', 'Django']
+},
+{
+  title: 'Databases & Caching',
+  skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'SQLite']
+},
+{
+  title: 'Data & ORM',
+  skills: ['SQLAlchemy', 'Alembic', 'Hibernate / JPA', 'Flyway', 'Mongoose']
+},
+{
+  title: 'Messaging & Streaming',
+  skills: ['Apache Kafka', 'Celery', 'Redis Streams']
 },
 {
   title: 'DevOps',
-  skills: ['Docker', 'CI/CD', 'Git', 'GitHub Actions', 'DigitalOcean']
+  skills: ['Docker', 'Docker Compose', 'GitHub Actions', 'Gradle', 'Git', 'CI/CD']
+},
+{
+  title: 'Observability',
+  skills: ['Prometheus', 'Grafana', 'OpenTelemetry', 'Jaeger']
+},
+{
+  title: 'Testing',
+  skills: ['pytest', 'Vitest', 'Playwright', 'JUnit 5', 'Testcontainers']
 },
 {
   title: 'Cloud Services',
-  skills: ['AWS', 'Heroku', 'PythonAnywhere']
+  skills: ['AWS', 'Heroku', 'DigitalOcean', 'PythonAnywhere']
 },
 {
-  title: 'Other Tools',
-  skills: ['Figma', 'Jupyter Notebook', 'OpenCV', 'TensorFlow', 'Redis']
+  title: 'Data & ML',
+  skills: ['pandas', 'NumPy', 'Jupyter Notebook', 'OpenCV', 'TensorFlow']
+},
+{
+  title: 'Desktop & GUI',
+  skills: ['PyQt6', 'Qt', 'WinForms']
 }];
 
 export function Technologies() {
