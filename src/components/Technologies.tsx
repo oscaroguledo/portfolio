@@ -43,11 +43,15 @@ const techCategories = [
 },
 {
   title: 'Data & ML',
-  skills: ['pandas', 'NumPy', 'Jupyter Notebook', 'OpenCV', 'TensorFlow']
+  skills: ['pandas', 'NumPy']
 },
 {
   title: 'Desktop & GUI',
   skills: ['PyQt6', 'Qt', 'WinForms']
+},
+{
+  title: 'Other Tools',
+  skills: ['Figma', 'Jupyter Notebook', 'OpenCV', 'TensorFlow']
 }];
 
 export function Technologies() {
