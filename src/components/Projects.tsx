@@ -10,6 +10,12 @@ interface Project {
 // Replace these with your actual projects
 const projects: Project[] = [
   {
+    name: 'movie-reservation-system-2',
+    description: 'A Java rewrite of the movie reservation backend, split into two Spring Boot services: an auth-api that issues JWTs and hashes passwords with Argon2id, and a movie-api handling screenings, seat locks, reservations, payments, and admin reporting on capacity and revenue. The services stay in sync over a Kafka event pipeline, with Postgres as the durable store and Redis for seat holds and caching.',
+    tags: ['Java 21', 'Spring Boot 3', 'Spring Web', 'Spring Data JPA', 'Hibernate', 'Spring Security', 'Spring Kafka', 'Spring Data Redis', 'PostgreSQL 16', 'Flyway', 'Redis 7', 'Apache Kafka 3.8', 'JJWT', 'Argon2id', 'BouncyCastle', 'Gradle', 'JUnit 5', 'Testcontainers', 'Awaitility', 'Docker', 'Docker Compose', 'GitHub Actions'],
+    githubUrl: 'https://github.com/oscaroguledo/Movie-Reservation-System-2',
+  },
+  {
     name: 'movie-reservation-system',
     description: 'A movie reservation system built with FastAPI, PostgreSQL, and Kafka. Features real-time seat holds with automatic expiry, guest and authenticated bookings, and admin reporting on capacity and revenue. Designed as two independently deployable services connected by an event-driven pipeline, with Postgres as the durable store and Redis as the fast path.',
     tags: ['FastAPI', 'Uvicorn', 'Pydantic', 'PostgreSQL 16', 'SQLAlchemy (async)', 'asyncpg', 'Alembic', 'Redis 7', 'Apache Kafka', 'aiokafka', 'PyJWT', 'Argon2', 'GitHub Actions', 'Docker', 'Docker Compose', 'Python', 'pytest', 'pytest-asyncio', 'pytest-cov', 'httpx', 'Ruff'],
@@ -17,7 +23,7 @@ const projects: Project[] = [
   },
 {
   name: 'distributed-inventory-engine',
-  description: 'A distributed inventory management system built with FastAPI, React, and PostgreSQL. Features real-time inventory tracking. Designed for scalability and high availability in distributed environments.',
+  description: 'A high-concurrency inventory and order-processing engine built with FastAPI and PostgreSQL. Uses Redis with atomic Lua scripts for stock reservations, PgBouncer for connection pooling, and a full observability stack (Prometheus, Grafana, OpenTelemetry, Jaeger). Designed for correctness under heavy concurrent load.',
   tags: ['FastAPI', 'Uvicorn', 'Pydantic', 'Redis 7', 'Lua', 'PostgreSQL 16', 'SQLAlchemy (async)', 'asyncpg', 'PgBouncer', 'Prometheus', 'Grafana', 'Alertmanager', 'OpenTelemetry', 'Jaeger', 'redis_exporter', 'postgres_exporter', 'GitHub Actions', 'Docker', 'Docker Compose', 'Python', 'pytest-asyncio', 'httpx', 'pytest-cov', 'Ruff'],
   githubUrl: 'https://github.com/oscaroguledo/distributed-inventory-engine',
 },
@@ -25,55 +31,55 @@ const projects: Project[] = [
   name: 'TodoApp',
   description: 'A modern, full-stack todo application with a clean React frontend and Express.js backend. Features CRUD operations, search, sorting by priority/due date, pagination, responsive design, and system dark mode support.',
   githubUrl: 'https://github.com/oscaroguledo/TodoApp',
-  tags: ['React', 'TypeScript', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'Mongoose', 'Vite']
+  tags: ['React 18', 'TypeScript', 'Vite', 'Tailwind CSS', 'react-beautiful-dnd', 'Axios', 'Node.js', 'Express 5', 'MongoDB', 'Mongoose', 'ESLint']
 },
 {
   name: 'Health and Fitness Club Management System',
   description: 'A web-based application for managing health and fitness club operations, including member management, trainer scheduling, class enrollment, equipment maintenance, and fitness goal tracking. Features role-based access for members, trainers, and admins with JWT authentication.',
   githubUrl: 'https://github.com/oscaroguledo/EGEN5208W-Databases-for-Soft-Engineers',
-  tags: ['PostgreSQL', 'FastAPI', 'React', 'TypeScript', 'SQLAlchemy', 'Docker', 'JWT', 'Python']
+  tags: ['PostgreSQL', 'PL/pgSQL', 'FastAPI', 'Uvicorn', 'SQLAlchemy (async)', 'asyncpg', 'Pydantic', 'python-jose (JWT)', 'Passlib', 'bcrypt', 'React 18', 'TypeScript', 'Vite', 'Tailwind CSS', 'Framer Motion', 'Axios', 'Docker Compose', 'pytest', 'Python']
 },
 {
   name: 'Public Key Encryption Algorithm',
   description: 'A Python implementation of a simple public key encryption algorithm featuring key generation, message encryption, and decryption based on cryptographic principles including modular arithmetic and prime number selection. Supports command-line and file input with customizable key lengths.',
   githubUrl: 'https://github.com/oscaroguledo/publickeyalgorithm',
-  tags: ['Python', 'Cryptography', 'RSA', 'Modular Arithmetic', 'Prime Numbers']
+  tags: ['Python', 'Cryptography', 'Public-Key Encryption', 'Modular Arithmetic', 'Prime Numbers', 'CLI', 'Standard Library']
 },
 {
   name: 'Firewall',
   description: 'A Python command-line firewall rule manager that allows users to add, remove, and list firewall rules based on command-line input. Supports IPv4 address ranges, incoming/outgoing traffic bounds, and persists rules to JSON file.',
   githubUrl: 'https://github.com/oscaroguledo/Firewall',
-  tags: ['Python', 'Firewall', 'CLI', 'Networking', 'JSON']
+  tags: ['Python', 'Firewall', 'CLI', 'Networking', 'IPv4', 'JSON', 'Standard Library']
 },
 {
   name: 'DTA',
-  description: 'A desktop application for document analysis and tracking browser data, built with PyQt5 and Python. Features a Qt-based GUI interface for analyzing documents and monitoring browser activity.',
+  description: 'A PyQt6 desktop app (with a CLI mode) for analysing document-view logs: it parses user-agent strings, aggregates readers by country and continent, builds "also like" recommendation graphs with Graphviz, and renders tables and matplotlib charts.',
   githubUrl: 'https://github.com/oscaroguledo/dta',
-  tags: ['Python', 'PyQt5', 'Qt', 'Document Analysis', 'Browser Data', 'Desktop App']
+  tags: ['Python', 'PyQt6', 'Qt', 'matplotlib', 'pandas', 'Graphviz', 'user-agents', 'pycountry-convert', 'Desktop App', 'CLI', 'pytest']
 },
 {
-  name: 'Vigenere Cipher in Assembly and C',
-  description: 'An implementation of the Vigenere cipher using both Assembly and C programming languages. Features prime number generation up to a limit with low-level system programming.',
+  name: 'Prime Generator in Assembly and C',
+  description: 'Generates all prime numbers up to a given limit. An x86-64 assembly routine does the primality test (fast rejection of multiples of 2 and 3, then trial division), called from a C wrapper that verifies results against known primes. Includes a separate C Sieve of Eratosthenes implementation.',
   githubUrl: 'https://github.com/oscaroguledo/prime_to_a_limit_assembly_and_sc',
-  tags: ['Assembly', 'C', 'Vigenere Cipher', 'Cryptography', 'Makefile']
+  tags: ['x86-64 Assembly', 'NASM', 'C', 'Prime Numbers', 'Sieve of Eratosthenes', 'Makefile', 'Systems Programming']
 },
 {
   name: 'Webbrowser',
   description: 'A web browser built in C# with basic browser functionality including refresh, home page, history navigation (next/previous), favorites, and bulk downloads.',
   githubUrl: 'https://github.com/oscaroguledo/webbrowser',
-  tags: ['C#', 'Web Browser', 'Desktop App', 'WinForms', 'WPF']
+  tags: ['C#', '.NET Framework 4.7.2', 'WinForms', 'WebView2', 'SQLite', 'Entity Framework 6', 'Web Browser', 'Desktop App']
 },
 {
   name: 'Weather-App',
   description: 'A Python weather application using the Open-Meteo API with support for hourly, daily, current, and 15-minutely weather data. Features pressure level variables (1000hPa to 30hPa), multiple weather models comparison, solar radiation data for PV planning, agricultural monitoring, and marine weather. Includes Pandas DataFrame integration with caching and retry logic.',
   githubUrl: 'https://github.com/oscaroguledo/Weather-App',
-  tags: ['Python', 'Open-Meteo API', 'Weather Forecast', 'Pandas', 'Data Analysis', 'Meteorology']
+  tags: ['Python', 'Open-Meteo API', 'openmeteo-requests SDK', 'pandas', 'NumPy', 'requests-cache', 'retry-requests', 'Weather Forecast', 'Data Analysis', 'Meteorology']
 },
 {
   name: 'Blog-Platform',
   description: 'A full-stack blog application built with FastAPI, React, and PostgreSQL. Features user authentication, post management with categories and tags, nested comments, analytics dashboard, and admin panel. Containerized with Docker for easy deployment. Includes comprehensive testing with Pytest for backend and Vitest/Playwright for frontend.',
   githubUrl: 'https://github.com/oscaroguledo/blog-app-fastapi-react',
-  tags: ['FastAPI', 'React', 'TypeScript', 'PostgreSQL', 'Redis', 'Docker', 'Celery', 'Tailwind CSS', 'Full-Stack']
+  tags: ['FastAPI', 'Uvicorn', 'SQLAlchemy (async)', 'asyncpg', 'Alembic', 'Pydantic', 'python-jose (JWT)', 'Passlib', 'Celery', 'Redis', 'aiosmtplib', 'PostgreSQL', 'React 18', 'TypeScript', 'Vite', 'Tailwind CSS', 'Framer Motion', 'React Router', 'Recharts', 'Axios', 'pytest', 'Vitest', 'Playwright', 'Docker']
 }
 ];
 
