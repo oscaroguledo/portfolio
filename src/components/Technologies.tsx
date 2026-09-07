@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 const techCategories = [
 {
   title: 'Languages',
-  skills: ['Python', 'JavaScript', 'TypeScript', 'Java', 'C#', 'C', 'SQL', 'x86-64 Assembly']
+  skills: ['Python', 'JavaScript', 'TypeScript', 'Java', 'C#', 'C', 'R', 'SQL', 'x86-64 Assembly']
 },
 {
   title: 'Frontend',
@@ -43,7 +43,11 @@ const techCategories = [
 },
 {
   title: 'Data & ML',
-  skills: ['pandas', 'NumPy']
+  skills: ['pandas', 'NumPy', 'scikit-learn', 'tidymodels', 'matplotlib', 'seaborn', 'Jupyter Notebook', 'R Markdown', 'TensorFlow', 'OpenCV']
+},
+{
+  title: 'ML Techniques',
+  skills: ['Logistic Regression', 'Decision Trees', 'Random Forests', 'Bagging', 'Cross-Validation', 'Hyperparameter Tuning', 'ROC-AUC', 'RMSE', 'Feature Importance']
 },
 {
   title: 'Desktop & GUI',
@@ -51,7 +55,7 @@ const techCategories = [
 },
 {
   title: 'Other Tools',
-  skills: ['Figma', 'Jupyter Notebook', 'OpenCV', 'TensorFlow']
+  skills: ['Figma', 'Graphviz']
 }];
 
 export function Technologies() {
