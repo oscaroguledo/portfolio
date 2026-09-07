@@ -60,6 +60,7 @@ Notebook, R Markdown
 |---|---|---|
 | [Customer Churn Predictor](https://github.com/oscaroguledo/Customer-Churn-Predictor) | Predicts subscription churn on the Telco dataset; compares Logistic Regression, Decision Tree, and Random Forest on precision / recall / F1 / ROC-AUC with churn-driver analysis. | Python, scikit-learn, pandas, Jupyter |
 | [ECMP5005 Housing Regression](https://github.com/oscaroguledo/ecmp5005-housing-regression) | Predicts Ames house prices; benchmarks a pruned regression tree, bagged ensemble, and random forest on test-set RMSE with permutation feature importance. | R, tidymodels, ranger, rpart |
+| [ECMP5005 Housing Regression 2](https://github.com/oscaroguledo/ecmp5005-housing-regression2) | scikit-learn Python port of the same exercise: decision tree with cost-complexity pruning via `GridSearchCV`, bagged ensemble, and random forest compared on test RMSE with permutation importance. | Python, scikit-learn, pandas, Jupyter |
 
 ### Backend & Distributed Systems
 

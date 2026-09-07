@@ -7,22 +7,27 @@ interface Project {
   githubUrl: string;
   tags: string[];
 }
-// Replace these with your actual projects
+// Ordered to match the grouping in README.md:
+// ML & Data Science -> Backend & Distributed Systems -> Full-Stack -> Systems, Security & Tooling
 const projects: Project[] = [
-  {
-    name: 'ecmp5005-housing-regression',
-    description: 'An R tidymodels analysis that predicts residential sale price from the Ames Housing dataset and benchmarks four tree-based regressors on a held-out test set. It runs a 70/30 stratified train/test split (character columns coerced to factors so every CV fold sees consistent levels), fits a baseline rpart regression tree and plots it, prunes via 10-fold cross-validated cost_complexity tuning, builds a bagged ensemble by tuning the number of trees over seq(10, 500, 20) with permutation variable importance, and fits a random forest by tuning mtry over 1..p. Models are compared on test-set RMSE (unpruned tree 41,831 to random forest 27,720), with the tree diagram, a vip importance chart, and a side-by-side error table surfacing the top price drivers (Year_Built, Gr_Liv_Area, First_Flr_SF, Garage_Cars, bathroom count). Deliverables are a consolidated run_analysis.R pipeline, a generated da.md answer sheet, and a knitted R Markdown report (oscaroguledo.html).',
-    tags: ['R', 'R Markdown', 'knitr', 'tidymodels', 'parsnip', 'rsample', 'workflows', 'tune', 'dials', 'yardstick', 'recipes', 'dplyr', 'readr', 'rpart', 'rpart.plot', 'ranger', 'Decision Tree', 'Cost-Complexity Pruning', 'Bagging', 'Random Forest', '10-Fold Cross-Validation', 'Hyperparameter Tuning', 'Stratified Train/Test Split', 'RMSE', 'Permutation Feature Importance', 'vip', 'Ames Housing Dataset'],
-    githubUrl: 'https://github.com/oscaroguledo/ecmp5005-housing-regression',
-  },
-
   {
     name: 'customer-churn-predictor',
     description: 'A scikit-learn notebook that predicts whether a subscription service user will cancel, trained on the Telco Customer Churn dataset pulled straight from its raw CSV URL. It walks through EDA and preprocessing (coercing TotalCharges to numeric, dropping the customer ID, encoding the binary target, one-hot encoding categoricals, and checking the ~26.5% class imbalance), a stratified train/test split with leakage-safe StandardScaler fitting, and baseline comparison of Logistic Regression, Decision Tree, and Random Forest. Models are judged on precision, recall, F1, and ROC-AUC rather than accuracy, with ROC curves, confusion matrices, and coefficient/feature-importance charts surfacing the top churn drivers (month-to-month contracts, fiber-optic internet, electronic-check payment) and retention drivers (long tenure, two-year contracts).',
     tags: ['Python 3', 'Jupyter Notebook', 'pandas', 'NumPy', 'scikit-learn', 'Logistic Regression', 'Decision Tree', 'Random Forest', 'StandardScaler', 'One-Hot Encoding', 'Stratified Train/Test Split', 'ROC-AUC', 'Classification Report', 'Confusion Matrix', 'Feature Importance', 'matplotlib', 'seaborn', 'joblib', 'Telco Customer Churn Dataset', 'pip', 'venv', 'pytest'],
     githubUrl: 'https://github.com/oscaroguledo/Customer-Churn-Predictor',
   },
-
+  {
+    name: 'ecmp5005-housing-regression',
+    description: 'An R tidymodels analysis that predicts residential sale price from the Ames Housing dataset and benchmarks four tree-based regressors on a held-out test set. It runs a 70/30 stratified train/test split (character columns coerced to factors so every CV fold sees consistent levels), fits a baseline rpart regression tree and plots it, prunes via 10-fold cross-validated cost_complexity tuning, builds a bagged ensemble by tuning the number of trees over seq(10, 500, 20) with permutation variable importance, and fits a random forest by tuning mtry over 1..p. Models are compared on test-set RMSE (unpruned tree 41,831 to random forest 27,720), with the tree diagram, a vip importance chart, and a side-by-side error table surfacing the top price drivers (Year_Built, Gr_Liv_Area, First_Flr_SF, Garage_Cars, bathroom count). Deliverables are a consolidated run_analysis.R pipeline, a generated da.md answer sheet, and a knitted R Markdown report (oscaroguledo.html).',
+    tags: ['R', 'R Markdown', 'knitr', 'tidymodels', 'parsnip', 'rsample', 'workflows', 'tune', 'dials', 'yardstick', 'recipes', 'dplyr', 'readr', 'rpart', 'rpart.plot', 'ranger', 'Decision Tree', 'Cost-Complexity Pruning', 'Bagging', 'Random Forest', '10-Fold Cross-Validation', 'Hyperparameter Tuning', 'Stratified Train/Test Split', 'RMSE', 'Permutation Feature Importance', 'vip', 'Ames Housing Dataset'],
+    githubUrl: 'https://github.com/oscaroguledo/ecmp5005-housing-regression',
+  },
+  {
+    name: 'ecmp5005-housing-regression2',
+    description: 'A scikit-learn re-implementation of the ECMP5005 tree-based regression exercise (Python port of the R/tidymodels original), predicting Sale_Price on the Ames housing dataset. The data.ipynb notebook walks through EDA (target distribution raw and log, missing-value scan, numeric correlations), preprocessing (median/None imputation, one-hot encoding, no scaling for tree models), a 70/30 train_test_split, a baseline DecisionTreeRegressor with a plotted tree, cost-complexity pruning via GridSearchCV over ccp_alpha with 10-fold KFold, a bagged ensemble (RandomForestRegressor with max_features=1.0) tuning n_estimators over range(10, 501, 20), and a random forest tuning max_features. Models are compared on test RMSE with a summary table and bar chart, and permutation_importance surfaces the top price drivers (Year_Built, Gr_Liv_Area, First_Flr_SF, Garage_Cars, bathroom count). Ships a src/ames_trees.py script form of the pipeline and pytest smoke tests.',
+    tags: ['Python 3', 'Jupyter Notebook', 'pandas', 'NumPy', 'scikit-learn', 'Decision Tree', 'Random Forest', 'Bagging', 'Cost-Complexity Pruning', 'ccp_alpha', 'GridSearchCV', 'KFold Cross-Validation', 'Hyperparameter Tuning', 'train_test_split', 'One-Hot Encoding', 'RMSE', 'Permutation Importance', 'plot_tree', 'matplotlib', 'seaborn', 'pytest', 'venv', 'pip', 'Ames Housing Dataset'],
+    githubUrl: 'https://github.com/oscaroguledo/ecmp5005-housing-regression2',
+  },
   {
     name: 'movie-reservation-system-2',
     description: 'A Java rewrite of the movie reservation backend, split into two Spring Boot services: an auth-api that issues JWTs and hashes passwords with Argon2id, and a movie-api handling screenings, seat locks, reservations, payments, and admin reporting on capacity and revenue. The services stay in sync over a Kafka event pipeline, with Postgres as the durable store and Redis for seat holds and caching.',
@@ -35,66 +40,66 @@ const projects: Project[] = [
     tags: ['FastAPI', 'Uvicorn', 'Pydantic', 'PostgreSQL 16', 'SQLAlchemy (async)', 'asyncpg', 'Alembic', 'Redis 7', 'Apache Kafka', 'aiokafka', 'PyJWT', 'Argon2', 'GitHub Actions', 'Docker', 'Docker Compose', 'Python', 'pytest', 'pytest-asyncio', 'pytest-cov', 'httpx', 'Ruff'],
     githubUrl: 'https://github.com/oscaroguledo/Movie-Reservation-System',
   },
-{
-  name: 'distributed-inventory-engine',
-  description: 'A high-concurrency inventory and order-processing engine built with FastAPI and PostgreSQL. Uses Redis with atomic Lua scripts for stock reservations, PgBouncer for connection pooling, and a full observability stack (Prometheus, Grafana, OpenTelemetry, Jaeger). Designed for correctness under heavy concurrent load.',
-  tags: ['FastAPI', 'Uvicorn', 'Pydantic', 'Redis 7', 'Lua', 'PostgreSQL 16', 'SQLAlchemy (async)', 'asyncpg', 'PgBouncer', 'Prometheus', 'Grafana', 'Alertmanager', 'OpenTelemetry', 'Jaeger', 'redis_exporter', 'postgres_exporter', 'GitHub Actions', 'Docker', 'Docker Compose', 'Python', 'pytest-asyncio', 'httpx', 'pytest-cov', 'Ruff'],
-  githubUrl: 'https://github.com/oscaroguledo/distributed-inventory-engine',
-},
-{
-  name: 'TodoApp',
-  description: 'A modern, full-stack todo application with a clean React frontend and Express.js backend. Features CRUD operations, search, sorting by priority/due date, pagination, responsive design, and system dark mode support.',
-  githubUrl: 'https://github.com/oscaroguledo/TodoApp',
-  tags: ['React 18', 'TypeScript', 'Vite', 'Tailwind CSS', 'react-beautiful-dnd', 'Axios', 'Node.js', 'Express 5', 'MongoDB', 'Mongoose', 'ESLint']
-},
-{
-  name: 'Health and Fitness Club Management System',
-  description: 'A web-based application for managing health and fitness club operations, including member management, trainer scheduling, class enrollment, equipment maintenance, and fitness goal tracking. Features role-based access for members, trainers, and admins with JWT authentication.',
-  githubUrl: 'https://github.com/oscaroguledo/EGEN5208W-Databases-for-Soft-Engineers',
-  tags: ['PostgreSQL', 'PL/pgSQL', 'FastAPI', 'Uvicorn', 'SQLAlchemy (async)', 'asyncpg', 'Pydantic', 'python-jose (JWT)', 'Passlib', 'bcrypt', 'React 18', 'TypeScript', 'Vite', 'Tailwind CSS', 'Framer Motion', 'Axios', 'Docker Compose', 'pytest', 'Python']
-},
-{
-  name: 'Public Key Encryption Algorithm',
-  description: 'A Python implementation of a simple public key encryption algorithm featuring key generation, message encryption, and decryption based on cryptographic principles including modular arithmetic and prime number selection. Supports command-line and file input with customizable key lengths.',
-  githubUrl: 'https://github.com/oscaroguledo/publickeyalgorithm',
-  tags: ['Python', 'Cryptography', 'Public-Key Encryption', 'Modular Arithmetic', 'Prime Numbers', 'CLI', 'Standard Library']
-},
-{
-  name: 'Firewall',
-  description: 'A Python command-line firewall rule manager that allows users to add, remove, and list firewall rules based on command-line input. Supports IPv4 address ranges, incoming/outgoing traffic bounds, and persists rules to JSON file.',
-  githubUrl: 'https://github.com/oscaroguledo/Firewall',
-  tags: ['Python', 'Firewall', 'CLI', 'Networking', 'IPv4', 'JSON', 'Standard Library']
-},
-{
-  name: 'DTA',
-  description: 'A PyQt6 desktop app (with a CLI mode) for analysing document-view logs: it parses user-agent strings, aggregates readers by country and continent, builds "also like" recommendation graphs with Graphviz, and renders tables and matplotlib charts.',
-  githubUrl: 'https://github.com/oscaroguledo/dta',
-  tags: ['Python', 'PyQt6', 'Qt', 'matplotlib', 'pandas', 'Graphviz', 'user-agents', 'pycountry-convert', 'Desktop App', 'CLI', 'pytest']
-},
-{
-  name: 'Prime Generator in Assembly and C',
-  description: 'Generates all prime numbers up to a given limit. An x86-64 assembly routine does the primality test (fast rejection of multiples of 2 and 3, then trial division), called from a C wrapper that verifies results against known primes. Includes a separate C Sieve of Eratosthenes implementation.',
-  githubUrl: 'https://github.com/oscaroguledo/prime_to_a_limit_assembly_and_sc',
-  tags: ['x86-64 Assembly', 'NASM', 'C', 'Prime Numbers', 'Sieve of Eratosthenes', 'Makefile', 'Systems Programming']
-},
-{
-  name: 'Webbrowser',
-  description: 'A web browser built in C# with basic browser functionality including refresh, home page, history navigation (next/previous), favorites, and bulk downloads.',
-  githubUrl: 'https://github.com/oscaroguledo/webbrowser',
-  tags: ['C#', '.NET Framework 4.7.2', 'WinForms', 'WebView2', 'SQLite', 'Entity Framework 6', 'Web Browser', 'Desktop App']
-},
-{
-  name: 'Weather-App',
-  description: 'A Python weather application using the Open-Meteo API with support for hourly, daily, current, and 15-minutely weather data. Features pressure level variables (1000hPa to 30hPa), multiple weather models comparison, solar radiation data for PV planning, agricultural monitoring, and marine weather. Includes Pandas DataFrame integration with caching and retry logic.',
-  githubUrl: 'https://github.com/oscaroguledo/Weather-App',
-  tags: ['Python', 'Open-Meteo API', 'openmeteo-requests SDK', 'pandas', 'NumPy', 'requests-cache', 'retry-requests', 'Weather Forecast', 'Data Analysis', 'Meteorology']
-},
-{
-  name: 'Blog-Platform',
-  description: 'A full-stack blog application built with FastAPI, React, and PostgreSQL. Features user authentication, post management with categories and tags, nested comments, analytics dashboard, and admin panel. Containerized with Docker for easy deployment. Includes comprehensive testing with Pytest for backend and Vitest/Playwright for frontend.',
-  githubUrl: 'https://github.com/oscaroguledo/blog-app-fastapi-react',
-  tags: ['FastAPI', 'Uvicorn', 'SQLAlchemy (async)', 'asyncpg', 'Alembic', 'Pydantic', 'python-jose (JWT)', 'Passlib', 'Celery', 'Redis', 'aiosmtplib', 'PostgreSQL', 'React 18', 'TypeScript', 'Vite', 'Tailwind CSS', 'Framer Motion', 'React Router', 'Recharts', 'Axios', 'pytest', 'Vitest', 'Playwright', 'Docker']
-}
+  {
+    name: 'distributed-inventory-engine',
+    description: 'A high-concurrency inventory and order-processing engine built with FastAPI and PostgreSQL. Uses Redis with atomic Lua scripts for stock reservations, PgBouncer for connection pooling, and a full observability stack (Prometheus, Grafana, OpenTelemetry, Jaeger). Designed for correctness under heavy concurrent load.',
+    tags: ['FastAPI', 'Uvicorn', 'Pydantic', 'Redis 7', 'Lua', 'PostgreSQL 16', 'SQLAlchemy (async)', 'asyncpg', 'PgBouncer', 'Prometheus', 'Grafana', 'Alertmanager', 'OpenTelemetry', 'Jaeger', 'redis_exporter', 'postgres_exporter', 'GitHub Actions', 'Docker', 'Docker Compose', 'Python', 'pytest-asyncio', 'httpx', 'pytest-cov', 'Ruff'],
+    githubUrl: 'https://github.com/oscaroguledo/distributed-inventory-engine',
+  },
+  {
+    name: 'Blog-Platform',
+    description: 'A full-stack blog application built with FastAPI, React, and PostgreSQL. Features user authentication, post management with categories and tags, nested comments, analytics dashboard, and admin panel. Containerized with Docker for easy deployment. Includes comprehensive testing with Pytest for backend and Vitest/Playwright for frontend.',
+    githubUrl: 'https://github.com/oscaroguledo/blog-app-fastapi-react',
+    tags: ['FastAPI', 'Uvicorn', 'SQLAlchemy (async)', 'asyncpg', 'Alembic', 'Pydantic', 'python-jose (JWT)', 'Passlib', 'Celery', 'Redis', 'aiosmtplib', 'PostgreSQL', 'React 18', 'TypeScript', 'Vite', 'Tailwind CSS', 'Framer Motion', 'React Router', 'Recharts', 'Axios', 'pytest', 'Vitest', 'Playwright', 'Docker']
+  },
+  {
+    name: 'Health and Fitness Club Management System',
+    description: 'A web-based application for managing health and fitness club operations, including member management, trainer scheduling, class enrollment, equipment maintenance, and fitness goal tracking. Features role-based access for members, trainers, and admins with JWT authentication.',
+    githubUrl: 'https://github.com/oscaroguledo/EGEN5208W-Databases-for-Soft-Engineers',
+    tags: ['PostgreSQL', 'PL/pgSQL', 'FastAPI', 'Uvicorn', 'SQLAlchemy (async)', 'asyncpg', 'Pydantic', 'python-jose (JWT)', 'Passlib', 'bcrypt', 'React 18', 'TypeScript', 'Vite', 'Tailwind CSS', 'Framer Motion', 'Axios', 'Docker Compose', 'pytest', 'Python']
+  },
+  {
+    name: 'TodoApp',
+    description: 'A modern, full-stack todo application with a clean React frontend and Express.js backend. Features CRUD operations, search, sorting by priority/due date, pagination, responsive design, and system dark mode support.',
+    githubUrl: 'https://github.com/oscaroguledo/TodoApp',
+    tags: ['React 18', 'TypeScript', 'Vite', 'Tailwind CSS', 'react-beautiful-dnd', 'Axios', 'Node.js', 'Express 5', 'MongoDB', 'Mongoose', 'ESLint']
+  },
+  {
+    name: 'Prime Generator in Assembly and C',
+    description: 'Generates all prime numbers up to a given limit. An x86-64 assembly routine does the primality test (fast rejection of multiples of 2 and 3, then trial division), called from a C wrapper that verifies results against known primes. Includes a separate C Sieve of Eratosthenes implementation.',
+    githubUrl: 'https://github.com/oscaroguledo/prime_to_a_limit_assembly_and_sc',
+    tags: ['x86-64 Assembly', 'NASM', 'C', 'Prime Numbers', 'Sieve of Eratosthenes', 'Makefile', 'Systems Programming']
+  },
+  {
+    name: 'Public Key Encryption Algorithm',
+    description: 'A Python implementation of a simple public key encryption algorithm featuring key generation, message encryption, and decryption based on cryptographic principles including modular arithmetic and prime number selection. Supports command-line and file input with customizable key lengths.',
+    githubUrl: 'https://github.com/oscaroguledo/publickeyalgorithm',
+    tags: ['Python', 'Cryptography', 'Public-Key Encryption', 'Modular Arithmetic', 'Prime Numbers', 'CLI', 'Standard Library']
+  },
+  {
+    name: 'Firewall',
+    description: 'A Python command-line firewall rule manager that allows users to add, remove, and list firewall rules based on command-line input. Supports IPv4 address ranges, incoming/outgoing traffic bounds, and persists rules to JSON file.',
+    githubUrl: 'https://github.com/oscaroguledo/Firewall',
+    tags: ['Python', 'Firewall', 'CLI', 'Networking', 'IPv4', 'JSON', 'Standard Library']
+  },
+  {
+    name: 'DTA',
+    description: 'A PyQt6 desktop app (with a CLI mode) for analysing document-view logs: it parses user-agent strings, aggregates readers by country and continent, builds "also like" recommendation graphs with Graphviz, and renders tables and matplotlib charts.',
+    githubUrl: 'https://github.com/oscaroguledo/dta',
+    tags: ['Python', 'PyQt6', 'Qt', 'matplotlib', 'pandas', 'Graphviz', 'user-agents', 'pycountry-convert', 'Desktop App', 'CLI', 'pytest']
+  },
+  {
+    name: 'Weather-App',
+    description: 'A Python weather application using the Open-Meteo API with support for hourly, daily, current, and 15-minutely weather data. Features pressure level variables (1000hPa to 30hPa), multiple weather models comparison, solar radiation data for PV planning, agricultural monitoring, and marine weather. Includes Pandas DataFrame integration with caching and retry logic.',
+    githubUrl: 'https://github.com/oscaroguledo/Weather-App',
+    tags: ['Python', 'Open-Meteo API', 'openmeteo-requests SDK', 'pandas', 'NumPy', 'requests-cache', 'retry-requests', 'Weather Forecast', 'Data Analysis', 'Meteorology']
+  },
+  {
+    name: 'Webbrowser',
+    description: 'A web browser built in C# with basic browser functionality including refresh, home page, history navigation (next/previous), favorites, and bulk downloads.',
+    githubUrl: 'https://github.com/oscaroguledo/webbrowser',
+    tags: ['C#', '.NET Framework 4.7.2', 'WinForms', 'WebView2', 'SQLite', 'Entity Framework 6', 'Web Browser', 'Desktop App']
+  }
 ];
 
 const PROJECTS_PER_PAGE = 3;
