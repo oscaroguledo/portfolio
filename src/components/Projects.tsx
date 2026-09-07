@@ -10,6 +10,13 @@ interface Project {
 // Replace these with your actual projects
 const projects: Project[] = [
   {
+    name: 'customer-churn-predictor',
+    description: 'A scikit-learn notebook that predicts whether a subscription service user will cancel, trained on the Telco Customer Churn dataset pulled straight from its raw CSV URL. It walks through EDA and preprocessing (coercing TotalCharges to numeric, dropping the customer ID, encoding the binary target, one-hot encoding categoricals, and checking the ~26.5% class imbalance), a stratified train/test split with leakage-safe StandardScaler fitting, and baseline comparison of Logistic Regression, Decision Tree, and Random Forest. Models are judged on precision, recall, F1, and ROC-AUC rather than accuracy, with ROC curves, confusion matrices, and coefficient/feature-importance charts surfacing the top churn drivers (month-to-month contracts, fiber-optic internet, electronic-check payment) and retention drivers (long tenure, two-year contracts).',
+    tags: ['Python 3', 'Jupyter Notebook', 'pandas', 'NumPy', 'scikit-learn', 'Logistic Regression', 'Decision Tree', 'Random Forest', 'StandardScaler', 'One-Hot Encoding', 'Stratified Train/Test Split', 'ROC-AUC', 'Classification Report', 'Confusion Matrix', 'Feature Importance', 'matplotlib', 'seaborn', 'joblib', 'Telco Customer Churn Dataset', 'pip', 'venv', 'pytest'],
+    githubUrl: 'https://github.com/oscaroguledo/Customer-Churn-Predictor',
+  },
+
+  {
     name: 'movie-reservation-system-2',
     description: 'A Java rewrite of the movie reservation backend, split into two Spring Boot services: an auth-api that issues JWTs and hashes passwords with Argon2id, and a movie-api handling screenings, seat locks, reservations, payments, and admin reporting on capacity and revenue. The services stay in sync over a Kafka event pipeline, with Postgres as the durable store and Redis for seat holds and caching.',
     tags: ['Java 21', 'Spring Boot 3', 'Spring Web', 'Spring Data JPA', 'Hibernate', 'Spring Security', 'Spring Kafka', 'Spring Data Redis', 'PostgreSQL 16', 'Flyway', 'Redis 7', 'Apache Kafka 3.8', 'JJWT', 'Argon2id', 'BouncyCastle', 'Gradle', 'JUnit 5', 'Testcontainers', 'Awaitility', 'Docker', 'Docker Compose', 'GitHub Actions'],
