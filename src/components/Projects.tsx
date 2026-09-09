@@ -129,6 +129,89 @@ const cardVariants = {
     }
   }
 };
+
+const TAG_LIMIT = 8;
+
+function ProjectCard({ project, idx }: { project: Project; idx: number }) {
+  const [showAllTags, setShowAllTags] = useState(false);
+  const hiddenCount = project.tags.length - TAG_LIMIT;
+  const visibleTags = showAllTags ? project.tags : project.tags.slice(0, TAG_LIMIT);
+
+  const collapse = () => setShowAllTags(false);
+
+  return (
+    <motion.a
+      href={project.githubUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      custom={idx}
+      variants={cardVariants}
+      initial="hidden"
+      animate="visible"
+      onMouseLeave={collapse}
+      onBlur={(e) => {
+        if (!e.currentTarget.contains(e.relatedTarget as Node)) collapse();
+      }}
+      whileHover={{
+        y: -6,
+        transition: {
+          duration: 0.25,
+          ease: 'easeOut'
+        }
+      }}
+      className="group flex flex-col bg-surface border border-muted rounded-xl p-6 hover:border-accent/50 transition-colors duration-300 relative overflow-hidden">
+
+      <div className="absolute inset-0 bg-gradient-to-b from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+      <div className="relative z-10 flex flex-col flex-1">
+        <div className="flex items-center justify-between mb-5">
+          <Folder size={28} className="text-accent" />
+          <ArrowUpRight
+          size={20}
+          className="text-muted-text opacity-0 -translate-x-2 translate-y-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300" />
+
+        </div>
+
+        <h3 className="text-lg font-medium text-text mb-3 group-hover:text-accent transition-colors duration-300">
+          {project.name}
+        </h3>
+
+        <p
+        className="text-muted-text text-sm leading-relaxed mb-6 flex-1 line-clamp-[7]"
+        title={project.description}>
+
+          {project.description}
+        </p>
+
+        <div className="flex flex-wrap gap-2 mt-auto">
+          {visibleTags.map((tag, tagIdx) =>
+        <span
+          key={tagIdx}
+          className="font-mono text-xs text-muted-text/80 bg-background px-2.5 py-1 rounded">
+
+              {tag}
+            </span>
+        )}
+          {!showAllTags && hiddenCount > 0 &&
+        <button
+          type="button"
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            setShowAllTags(true);
+          }}
+          className="font-mono text-xs text-accent/80 hover:text-accent bg-background px-2.5 py-1 rounded transition-colors duration-200"
+          aria-label={`Show ${hiddenCount} more tags`}>
+
+              +{hiddenCount}
+            </button>
+        }
+        </div>
+      </div>
+    </motion.a>);
+
+}
+
 export function Projects() {
   const [currentPage, setCurrentPage] = useState(0);
   const [direction, setDirection] = useState(0);
@@ -212,66 +295,7 @@ export function Projects() {
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               
               {paginatedProjects.map((project, idx) =>
-              <motion.a
-                key={project.name}
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                custom={idx}
-                variants={cardVariants}
-                initial="hidden"
-                animate="visible"
-                whileHover={{
-                  y: -6,
-                  transition: {
-                    duration: 0.25,
-                    ease: 'easeOut'
-                  }
-                }}
-                className="group flex flex-col bg-surface border border-muted rounded-xl p-6 hover:border-accent/50 transition-colors duration-300 relative overflow-hidden">
-                
-                  <div className="absolute inset-0 bg-gradient-to-b from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-
-                  <div className="relative z-10 flex flex-col flex-1">
-                    <div className="flex items-center justify-between mb-5">
-                      <Folder size={28} className="text-accent" />
-                      <ArrowUpRight
-                      size={20}
-                      className="text-muted-text opacity-0 -translate-x-2 translate-y-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300" />
-                    
-                    </div>
-
-                    <h3 className="text-lg font-medium text-text mb-3 group-hover:text-accent transition-colors duration-300">
-                      {project.name}
-                    </h3>
-
-                    <p
-                    className="text-muted-text text-sm leading-relaxed mb-6 flex-1 line-clamp-5"
-                    title={project.description}>
-
-                      {project.description}
-                    </p>
-
-                    <div className="flex flex-wrap gap-2 mt-auto">
-                      {project.tags.slice(0, 8).map((tag, tagIdx) =>
-                    <span
-                      key={tagIdx}
-                      className="font-mono text-xs text-muted-text/80 bg-background px-2.5 py-1 rounded">
-
-                          {tag}
-                        </span>
-                    )}
-                      {project.tags.length > 8 &&
-                    <span
-                      className="font-mono text-xs text-muted-text/60 px-2.5 py-1"
-                      title={project.tags.slice(8).join(', ')}>
-
-                          +{project.tags.length - 8}
-                        </span>
-                    }
-                    </div>
-                  </div>
-                </motion.a>
+              <ProjectCard key={project.name} project={project} idx={idx} />
               )}
             </motion.div>
           </AnimatePresence>
