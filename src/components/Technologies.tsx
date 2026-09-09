@@ -3,27 +3,31 @@ import { motion } from 'framer-motion';
 const techCategories = [
 {
   title: 'Languages',
-  skills: ['Python', 'JavaScript', 'TypeScript', 'Java', 'C#', 'C', 'R', 'SQL', 'x86-64 Assembly']
+  skills: ['Python', 'JavaScript', 'TypeScript', 'Java', 'C#', 'C', 'R', 'SQL', 'PL/pgSQL', 'Lua', 'x86-64 Assembly']
 },
 {
   title: 'Frontend',
-  skills: ['React', 'Vite', 'Tailwind CSS', 'Framer Motion', 'React Router', 'Recharts']
+  skills: ['React', 'Vite', 'Tailwind CSS', 'Framer Motion', 'React Router', 'Recharts', 'Axios', 'ESLint']
 },
 {
   title: 'Backend',
-  skills: ['FastAPI', 'Spring Boot', 'Node.js', 'Express.js', 'Django']
+  skills: ['FastAPI', 'Uvicorn', 'Pydantic', 'Spring Boot', 'Spring Security', 'Node.js', 'Express.js', 'Django']
 },
 {
   title: 'Databases & Caching',
-  skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'SQLite']
+  skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'SQLite', 'PgBouncer']
 },
 {
   title: 'Data & ORM',
-  skills: ['SQLAlchemy', 'Alembic', 'Hibernate / JPA', 'Flyway', 'Mongoose']
+  skills: ['SQLAlchemy', 'asyncpg', 'Alembic', 'Hibernate / JPA', 'Flyway', 'Mongoose']
 },
 {
   title: 'Messaging & Streaming',
-  skills: ['Apache Kafka', 'Celery', 'Redis Streams']
+  skills: ['Apache Kafka', 'aiokafka', 'Spring Kafka', 'Celery', 'Redis Streams']
+},
+{
+  title: 'Security & Auth',
+  skills: ['JWT', 'Argon2id', 'bcrypt', 'Passlib', 'BouncyCastle', 'Public-Key Cryptography']
 },
 {
   title: 'DevOps',
@@ -31,15 +35,15 @@ const techCategories = [
 },
 {
   title: 'Observability',
-  skills: ['Prometheus', 'Grafana', 'OpenTelemetry', 'Jaeger']
+  skills: ['Prometheus', 'Grafana', 'Alertmanager', 'OpenTelemetry', 'Jaeger']
 },
 {
   title: 'Testing',
-  skills: ['pytest', 'Vitest', 'Playwright', 'JUnit 5', 'Testcontainers']
+  skills: ['pytest', 'pytest-asyncio', 'httpx', 'Vitest', 'Playwright', 'JUnit 5', 'Testcontainers']
 },
 {
-  title: 'Cloud Services',
-  skills: ['AWS', 'Heroku', 'DigitalOcean', 'PythonAnywhere']
+  title: 'Cloud & Hosting',
+  skills: ['Cloudflare Workers', 'AWS', 'Heroku', 'DigitalOcean', 'PythonAnywhere']
 },
 {
   title: 'Data & ML',
@@ -47,15 +51,15 @@ const techCategories = [
 },
 {
   title: 'ML Techniques',
-  skills: ['Logistic Regression', 'Decision Trees', 'Random Forests', 'Bagging', 'Cross-Validation', 'Hyperparameter Tuning', 'ROC-AUC', 'RMSE', 'Feature Importance']
+  skills: ['Logistic Regression', 'Decision Trees', 'Random Forests', 'Bagging', 'Cost-Complexity Pruning', 'Cross-Validation', 'Hyperparameter Tuning', 'ROC-AUC', 'RMSE', 'Feature Importance']
 },
 {
   title: 'Desktop & GUI',
-  skills: ['PyQt6', 'Qt', 'WinForms']
+  skills: ['PyQt6', 'Qt', 'WinForms', 'WebView2']
 },
 {
   title: 'Other Tools',
-  skills: ['Figma', 'Graphviz']
+  skills: ['Figma', 'Graphviz', 'NASM', 'Makefile']
 }];
 
 export function Technologies() {

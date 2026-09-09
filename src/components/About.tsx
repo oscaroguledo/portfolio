@@ -35,19 +35,28 @@ export function About() {
 
             <div className="space-y-6 text-muted-text text-lg leading-relaxed">
               <p>
-                Hello! I am a software developer with a passion for building
-                innovative applications. My expertise lies in web development,
-                with experience in both front-end and back-end technologies.
+                I'm a full-stack developer who works across web applications,
+                event-driven backend systems, and applied machine learning. I
+                build with FastAPI, Spring Boot, and React/TypeScript, and I care
+                most about software that stays correct under load and remains
+                maintainable long after it ships.
               </p>
               <p>
-                I am continuously seeking to learn and improve my skills, and I
-                enjoy collaborating with others to create effective, scalable,
-                and elegant solutions to complex problems.
+                A lot of my recent work has been on distributed backends:
+                services connected by Kafka event pipelines, PostgreSQL and Redis
+                for durable and fast-path storage, atomic reservation logic for
+                high-concurrency workloads, and full observability with
+                Prometheus, Grafana, and OpenTelemetry. Alongside that I've
+                spent time closer to the metal, from x86-64 assembly and C to
+                public-key cryptography and networking tools.
               </p>
               <p>
-                Whether it's designing a seamless user interface or architecting
-                a robust database structure, I approach every challenge with
-                curiosity and a commitment to quality.
+                More recently I've been focused on data science and machine
+                learning, building tree-based models in scikit-learn and R /
+                tidymodels with proper cross-validation, leakage-safe
+                preprocessing, and honest evaluation. Whether it's a seamless
+                interface, a robust data model, or a model pipeline, I approach
+                each problem with curiosity and a commitment to quality.
               </p>
             </div>
           </motion.div>
