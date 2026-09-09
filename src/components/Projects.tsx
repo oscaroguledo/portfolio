@@ -245,19 +245,30 @@ export function Projects() {
                       {project.name}
                     </h3>
 
-                    <p className="text-muted-text text-sm leading-relaxed mb-6 flex-1">
+                    <p
+                    className="text-muted-text text-sm leading-relaxed mb-6 flex-1 line-clamp-5"
+                    title={project.description}>
+
                       {project.description}
                     </p>
 
                     <div className="flex flex-wrap gap-2 mt-auto">
-                      {project.tags.map((tag, tagIdx) =>
+                      {project.tags.slice(0, 8).map((tag, tagIdx) =>
                     <span
                       key={tagIdx}
                       className="font-mono text-xs text-muted-text/80 bg-background px-2.5 py-1 rounded">
-                      
+
                           {tag}
                         </span>
                     )}
+                      {project.tags.length > 8 &&
+                    <span
+                      className="font-mono text-xs text-muted-text/60 px-2.5 py-1"
+                      title={project.tags.slice(8).join(', ')}>
+
+                          +{project.tags.length - 8}
+                        </span>
+                    }
                     </div>
                   </div>
                 </motion.a>

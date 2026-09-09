@@ -35,28 +35,32 @@ export function About() {
 
             <div className="space-y-6 text-muted-text text-lg leading-relaxed">
               <p>
-                I'm a full-stack developer who works across web applications,
-                event-driven backend systems, and applied machine learning. I
-                build with FastAPI, Spring Boot, and React/TypeScript, and I care
-                most about software that stays correct under load and remains
-                maintainable long after it ships.
+                I'm a software engineer and an M.Eng. Software Engineering
+                Practice (Co-op) candidate at Carleton University in Ottawa. For
+                roughly two and a half years I worked as a Backend Software
+                Engineer at Dowell Research UK, building modular, scalable
+                services with Python (FastAPI, Django, DRF) and delivering
+                full-stack solutions with React and Node.js over RESTful APIs.
               </p>
               <p>
-                A lot of my recent work has been on distributed backends:
-                services connected by Kafka event pipelines, PostgreSQL and Redis
-                for durable and fast-path storage, atomic reservation logic for
-                high-concurrency workloads, and full observability with
-                Prometheus, Grafana, and OpenTelemetry. Alongside that I've
-                spent time closer to the metal, from x86-64 assembly and C to
-                public-key cryptography and networking tools.
+                My focus is production-grade backend systems: microservice
+                architectures, PostgreSQL, MySQL, MongoDB, and Redis with caching
+                and query tuning, Kafka and Redis Streams for event processing,
+                and containerized deployments on AWS, Heroku, and DigitalOcean
+                through Docker and CI/CD pipelines. I put a lot of weight on
+                testing and verification — PyTest, load testing for concurrency
+                correctness, and formal verification with SPIN — and on
+                observability with Prometheus, Grafana, OpenTelemetry, and
+                Jaeger.
               </p>
               <p>
-                More recently I've been focused on data science and machine
-                learning, building tree-based models in scikit-learn and R /
-                tidymodels with proper cross-validation, leakage-safe
-                preprocessing, and honest evaluation. Whether it's a seamless
-                interface, a robust data model, or a model pipeline, I approach
-                each problem with curiosity and a commitment to quality.
+                Building on an academic grounding in data analytics and software
+                systems design, I've more recently been working on machine
+                learning — tree-based models in scikit-learn and R / tidymodels
+                with proper cross-validation, leakage-safe preprocessing, and
+                honest evaluation. I work well in Agile teams, care about clear
+                documentation and clean pull requests, and approach every problem
+                with curiosity and a commitment to quality.
               </p>
             </div>
           </motion.div>
@@ -101,19 +105,19 @@ export function About() {
                     <span className="text-green-400/80">'Oscar Oguledo'</span>,
                     {'\n'} <span className="text-accent">role</span>:{' '}
                     <span className="text-green-400/80">
-                      'Full Stack Developer'
+                      'Backend Software Engineer'
                     </span>
                     ,{'\n'} <span className="text-accent">passions</span>: [
                     {'\n'}{' '}
                     <span className="text-green-400/80">
-                      'Building innovative apps'
+                      'Reliable backend systems'
                     </span>
                     ,{'\n'}{' '}
                     <span className="text-green-400/80">
-                      'Continuous learning'
+                      'Testing & verification'
                     </span>
                     ,{'\n'}{' '}
-                    <span className="text-green-400/80">'Collaboration'</span>
+                    <span className="text-green-400/80">'Continuous learning'</span>
                     {'\n'} ],
                     {'\n'} <span className="text-accent">solveProblem</span>: (
                     <span className="text-text">challenge</span>){' '}
