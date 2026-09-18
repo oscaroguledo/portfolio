@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 const techCategories = [
 {
   title: 'Languages',
-  skills: ['Python', 'JavaScript', 'TypeScript', 'Java', 'C#', 'C', 'R', 'SQL', 'PL/pgSQL', 'Lua', 'x86-64 Assembly']
+  skills: ['Python', 'JavaScript', 'TypeScript', 'Java', 'JVM', 'C#', 'C', 'R', 'SQL', 'PL/pgSQL', 'Lua', 'x86-64 Assembly']
 },
 {
   title: 'Frontend',
