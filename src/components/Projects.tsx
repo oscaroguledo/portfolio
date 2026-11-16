@@ -99,6 +99,48 @@ const projects: Project[] = [
     description: 'A web browser built in C# with basic browser functionality including refresh, home page, history navigation (next/previous), favorites, and bulk downloads.',
     githubUrl: 'https://github.com/oscaroguledo/webbrowser',
     tags: ['C#', '.NET Framework 4.7.2', 'WinForms', 'WebView2', 'SQLite', 'Entity Framework 6', 'Web Browser', 'Desktop App']
+  },
+  {
+    name: 'Distributed-Cloud-File-Processing-Platform',
+    description: 'An enterprise-grade, event-driven distributed system for reliably ingesting, validating, extracting, indexing, and analyzing millions of heterogeneous files (PDF, DOCX, CSV, Video, Images) asynchronously. Engineered to solve complex distributed problems including chunked resumable uploads, content-addressable deduplication, and idempotent stream processing.',
+    tags: ['FastAPI', 'Python', 'Apache Kafka', 'PostgreSQL', 'Redis', 'OpenSearch', 'Distributed Systems', 'Event-Driven', 'Microservices', 'Async Processing', 'Docker', 'Docker Compose'],
+    githubUrl: 'https://github.com/oscaroguledo/Distributed-Cloud-File-Processing-Platform',
+  },
+  {
+    name: 'el-deras-writes',
+    description: 'A full-stack blog platform built with FastAPI, React, Vite, and PostgreSQL. Features role-based access, JWT authentication, category and tag management, article filtering, email notifications via Brevo, and admin workflows. Deployed on Render (backend) and Cloudflare Pages (frontend) with automated migrations and smoke tests in CI.',
+    tags: ['FastAPI', 'Uvicorn', 'SQLAlchemy (async)', 'asyncpg', 'Alembic', 'Pydantic', 'python-jose (JWT)', 'Passlib', 'React 19', 'Vite', 'TypeScript', 'Tailwind CSS', 'Axios', 'PostgreSQL', 'Brevo', 'GitHub Actions', 'Docker', 'Render', 'Cloudflare Pages', 'pytest'],
+    githubUrl: 'https://github.com/oscaroguledo/el-deras-writes',
+  },
+  {
+    name: 'Cabine de Français',
+    description: 'A speech-driven French learning platform built with React and the Web Speech API, designed to prepare learners for TCF Canada and TEF Canada proficiency exams. Features 989 vocabulary entries across three proficiency tiers (A1–C2 based on CEFR), 26 grammar chapters with interactive quizzes, exam-practice modes matching official formats, pre-rendered native-quality audio clips, real-time pronunciation scoring via speech recognition with fuzzy matching, and a Foundation Score dashboard mapped to Canadian Language Benchmarks. Fully client-side with offline support via service workers.',
+    tags: ['React 19', 'Vite', 'TypeScript', 'Web Speech API', 'SpeechRecognition', 'SpeechSynthesis', 'localStorage', 'marked', 'Service Workers', 'PWA', 'Vitest', 'Testing Library', 'oxlint'],
+    githubUrl: 'https://github.com/oscaroguledo/cabine-de-francais',
+  },
+  {
+    name: 'G1 Guru',
+    description: 'A free Ontario G1 knowledge test practice app with 365 questions, a timed mock exam, road-sign quiz, and progress tracking. Fully offline-capable with 100% test coverage, deployed as a progressive web app. Built from the Official MTO Driver\'s Handbook, features spaced-review weak-question drilling, exam history tracking, and responsive design that works on mobile and desktop.',
+    tags: ['React 19', 'Vite', 'JavaScript', 'Vitest', 'Testing Library', 'vite-plugin-pwa', 'Service Workers', 'PWA', 'localStorage', 'GitHub Actions', 'Responsive Design'],
+    githubUrl: 'https://github.com/oscaroguledo/G1-Guru',
+  },
+  {
+    name: 'Necrolink',
+    description: 'An AI-powered link checker that detects and resurrects dead and "zombie" links from documents using the Internet Archive\'s Wayback Machine. Accepts PDF, Markdown, and web pages, classifies links into ghosts (404), lost souls (unrecoverable), zombies (content-drifted), and living. Replaces broken links with archived snapshots and flags zombie links with AI-detected drift explanations. Built with Next.js, features property-based testing with fast-check and custom MCP server integration.',
+    tags: ['Next.js 14', 'React', 'TypeScript', 'Node.js', 'Kiro API', 'Internet Archive Wayback Machine', 'fast-check', 'Property-Based Testing', 'Vitest', 'MCP Server', 'AWS', 'Vercel'],
+    githubUrl: 'https://github.com/oscaroguledo/Necrolink',
+  },
+  {
+    name: 'GitHub-User-Activity',
+    description: 'A lightweight Java CLI tool that fetches and displays recent GitHub user activity in the terminal. Parses GitHub API responses and formats activity logs (push events, pull requests, issues, forks) with clean console output.',
+    tags: ['Java', 'GitHub API', 'CLI', 'JSON Parsing'],
+    githubUrl: 'https://github.com/oscaroguledo/GitHub-User-Activity',
+  },
+  {
+    name: 'Task-Tracker',
+    description: 'A pure-Java command-line task tracker built with no external libraries or frameworks. Stores tasks in JSON, supports full CRUD operations, task status management (todo/in-progress/done), timestamps, and filtering. Includes a shell wrapper for convenient invocation.',
+    tags: ['Java 11+', 'JSON', 'CLI', 'File I/O', 'Collections', 'Standard Library'],
+    githubUrl: 'https://github.com/oscaroguledo/Task-Tracker',
   }
 ];
 
