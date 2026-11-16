@@ -17,18 +17,6 @@ const projects: Project[] = [
     githubUrl: 'https://github.com/oscaroguledo/Customer-Churn-Predictor',
   },
   {
-    name: 'ecmp5005-housing-regression',
-    description: 'An R tidymodels analysis that predicts residential sale price from the Ames Housing dataset and benchmarks four tree-based regressors on a held-out test set. It runs a 70/30 stratified train/test split (character columns coerced to factors so every CV fold sees consistent levels), fits a baseline rpart regression tree and plots it, prunes via 10-fold cross-validated cost_complexity tuning, builds a bagged ensemble by tuning the number of trees over seq(10, 500, 20) with permutation variable importance, and fits a random forest by tuning mtry over 1..p. Models are compared on test-set RMSE (unpruned tree 41,831 to random forest 27,720), with the tree diagram, a vip importance chart, and a side-by-side error table surfacing the top price drivers (Year_Built, Gr_Liv_Area, First_Flr_SF, Garage_Cars, bathroom count). Deliverables are a consolidated run_analysis.R pipeline, a generated da.md answer sheet, and a knitted R Markdown report (oscaroguledo.html).',
-    tags: ['R', 'R Markdown', 'knitr', 'tidymodels', 'parsnip', 'rsample', 'workflows', 'tune', 'dials', 'yardstick', 'recipes', 'dplyr', 'readr', 'rpart', 'rpart.plot', 'ranger', 'Decision Tree', 'Cost-Complexity Pruning', 'Bagging', 'Random Forest', '10-Fold Cross-Validation', 'Hyperparameter Tuning', 'Stratified Train/Test Split', 'RMSE', 'Permutation Feature Importance', 'vip', 'Ames Housing Dataset'],
-    githubUrl: 'https://github.com/oscaroguledo/ecmp5005-housing-regression',
-  },
-  {
-    name: 'ecmp5005-housing-regression2',
-    description: 'A scikit-learn re-implementation of the ECMP5005 tree-based regression exercise (Python port of the R/tidymodels original), predicting Sale_Price on the Ames housing dataset. The data.ipynb notebook walks through EDA (target distribution raw and log, missing-value scan, numeric correlations), preprocessing (median/None imputation, one-hot encoding, no scaling for tree models), a 70/30 train_test_split, a baseline DecisionTreeRegressor with a plotted tree, cost-complexity pruning via GridSearchCV over ccp_alpha with 10-fold KFold, a bagged ensemble (RandomForestRegressor with max_features=1.0) tuning n_estimators over range(10, 501, 20), and a random forest tuning max_features. Models are compared on test RMSE with a summary table and bar chart, and permutation_importance surfaces the top price drivers (Year_Built, Gr_Liv_Area, First_Flr_SF, Garage_Cars, bathroom count). Ships a src/ames_trees.py script form of the pipeline and pytest smoke tests.',
-    tags: ['Python 3', 'Jupyter Notebook', 'pandas', 'NumPy', 'scikit-learn', 'Decision Tree', 'Random Forest', 'Bagging', 'Cost-Complexity Pruning', 'ccp_alpha', 'GridSearchCV', 'KFold Cross-Validation', 'Hyperparameter Tuning', 'train_test_split', 'One-Hot Encoding', 'RMSE', 'Permutation Importance', 'plot_tree', 'matplotlib', 'seaborn', 'pytest', 'venv', 'pip', 'Ames Housing Dataset'],
-    githubUrl: 'https://github.com/oscaroguledo/ecmp5005-housing-regression2',
-  },
-  {
     name: 'movie-reservation-system-2',
     description: 'A Java rewrite of the movie reservation backend, split into two Spring Boot services: an auth-api that issues JWTs and hashes passwords with Argon2id, and a movie-api handling screenings, seat locks, reservations, payments, and admin reporting on capacity and revenue. The services stay in sync over a Kafka event pipeline, with Postgres as the durable store and Redis for seat holds and caching.',
     tags: ['Java 21', 'Spring Boot 3', 'Spring Web', 'Spring Data JPA', 'Hibernate', 'Spring Security', 'Spring Kafka', 'Spring Data Redis', 'PostgreSQL 16', 'Flyway', 'Redis 7', 'Apache Kafka 3.8', 'JJWT', 'Argon2id', 'BouncyCastle', 'Gradle', 'JUnit 5', 'Testcontainers', 'Awaitility', 'Docker', 'Docker Compose', 'GitHub Actions'],
@@ -99,12 +87,6 @@ const projects: Project[] = [
     description: 'A web browser built in C# with basic browser functionality including refresh, home page, history navigation (next/previous), favorites, and bulk downloads.',
     githubUrl: 'https://github.com/oscaroguledo/webbrowser',
     tags: ['C#', '.NET Framework 4.7.2', 'WinForms', 'WebView2', 'SQLite', 'Entity Framework 6', 'Web Browser', 'Desktop App']
-  },
-  {
-    name: 'Distributed-Cloud-File-Processing-Platform',
-    description: 'An enterprise-grade, event-driven distributed system for reliably ingesting, validating, extracting, indexing, and analyzing millions of heterogeneous files (PDF, DOCX, CSV, Video, Images) asynchronously. Engineered to solve complex distributed problems including chunked resumable uploads, content-addressable deduplication, and idempotent stream processing.',
-    tags: ['FastAPI', 'Python', 'Apache Kafka', 'PostgreSQL', 'Redis', 'OpenSearch', 'Distributed Systems', 'Event-Driven', 'Microservices', 'Async Processing', 'Docker', 'Docker Compose'],
-    githubUrl: 'https://github.com/oscaroguledo/Distributed-Cloud-File-Processing-Platform',
   },
   {
     name: 'el-deras-writes',
