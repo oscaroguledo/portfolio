@@ -7,9 +7,7 @@ interface Project {
   githubUrl: string;
   tags: string[];
 }
-// Ordered to match the grouping in README.md:
-// ML & Data Science -> Backend & Distributed Systems -> Full-Stack -> Systems, Security & Tooling
-const projects: Project[] = [
+const projectDefinitions: Project[] = [
   {
     name: 'customer-churn-predictor',
     description: 'A scikit-learn notebook that predicts whether a subscription service user will cancel, trained on the Telco Customer Churn dataset pulled straight from its raw CSV URL. It walks through EDA and preprocessing (coercing TotalCharges to numeric, dropping the customer ID, encoding the binary target, one-hot encoding categoricals, and checking the ~26.5% class imbalance), a stratified train/test split with leakage-safe StandardScaler fitting, and baseline comparison of Logistic Regression, Decision Tree, and Random Forest. Models are judged on precision, recall, F1, and ROC-AUC rather than accuracy, with ROC curves, confusion matrices, and coefficient/feature-importance charts surfacing the top churn drivers (month-to-month contracts, fiber-optic internet, electronic-check payment) and retention drivers (long tenure, two-year contracts).',
@@ -149,6 +147,43 @@ const projects: Project[] = [
     githubUrl: 'https://github.com/oscaroguledo/wplay',
   }
 ];
+
+// Keep the newest projects first in the portfolio.
+const projectOrder = [
+  'W Play',
+  'Necrolink',
+  'customer-churn-predictor',
+  'movie-reservation-system-2',
+  'Cabine de Français',
+  'movie-reservation-system',
+  'distributed-inventory-engine',
+  'GitHub-User-Activity',
+  'Task-Tracker',
+  'Blog-Platform',
+  'Weather-App',
+  'TodoApp',
+  'Health and Fitness Club Management System',
+  'G1 Guru',
+  'el-deras-writes',
+  'image-recognition-model',
+  'Simple-Contacts',
+  'scanner',
+  'DTA',
+  'Prime Generator in Assembly and C',
+  'Public Key Encryption Algorithm',
+  'Firewall',
+  'Webbrowser',
+];
+
+const projects = projectOrder.map((name) => {
+  const project = projectDefinitions.find((definition) => definition.name === name);
+
+  if (!project) {
+    throw new Error(`Missing project definition for "${name}"`);
+  }
+
+  return project;
+});
 
 const PROJECTS_PER_PAGE = 3;
 const cardVariants = {
