@@ -123,6 +123,30 @@ const projects: Project[] = [
     description: 'A pure-Java command-line task tracker built with no external libraries or frameworks. Stores tasks in JSON, supports full CRUD operations, task status management (todo/in-progress/done), timestamps, and filtering. Includes a shell wrapper for convenient invocation.',
     tags: ['Java 11+', 'JSON', 'CLI', 'File I/O', 'Collections', 'Standard Library'],
     githubUrl: 'https://github.com/oscaroguledo/Task-Tracker',
+  },
+  {
+    name: 'image-recognition-model',
+    description: 'An agricultural produce image recognition model built with AI to identify and classify crops, fruits, and vegetables based on visual features. Aids in sorting, quality control, and efficient management of produce in farming and supply chain processes.',
+    tags: ['Python', 'Jupyter Notebook', 'Deep Learning', 'Computer Vision', 'TensorFlow', 'Keras', 'Image Classification', 'Agriculture', 'CNN', 'pandas', 'NumPy', 'matplotlib'],
+    githubUrl: 'https://github.com/oscaroguledo/image-recognition-model',
+  },
+  {
+    name: 'Simple-Contacts',
+    description: 'A full-stack contact management web application built with React frontend and Django backend. Features CRUD operations for contacts with image upload, name, address, and phone number. Uses SQLite for data persistence and Django REST Framework for API endpoints.',
+    tags: ['Django', 'Django REST Framework', 'React', 'JavaScript', 'SQLite', 'Axios', 'CSS', 'REST API', 'Full-Stack'],
+    githubUrl: 'https://github.com/oscaroguledo/Simple-Contacts',
+  },
+  {
+    name: 'scanner',
+    description: 'A Python CLI tool for generating and scanning QR codes and barcodes. Supports embedding logos in generated codes, saving as PNG images or base64-encoded strings, and scanning from image files. Uses pyzbar for scanning and qrcode for generation.',
+    tags: ['Python', 'CLI', 'QR Code', 'Barcode', 'pyzbar', 'qrcode', 'Pillow', 'Image Processing', 'argparse'],
+    githubUrl: 'https://github.com/oscaroguledo/scanner',
+  },
+  {
+    name: 'W Play',
+    description: 'An Android music player and downloader built with React Native. Downloads audio via yt-dlp, converts to tagged MP3 with cover art, auto-detects genres using an on-device ML model (Discogs-EffNet), and provides background playback with notification and lock-screen controls. Everything runs on-device with no backend server or account required.',
+    tags: ['React Native', 'TypeScript', 'Kotlin', 'Android', 'yt-dlp', 'FFmpeg', 'Media3', 'ExoPlayer', 'ONNX Runtime', 'yt-dlp-android', 'Chaquopy', 'Jest', 'GitHub Actions', 'Gradle'],
+    githubUrl: 'https://github.com/oscaroguledo/wplay',
   }
 ];
 
