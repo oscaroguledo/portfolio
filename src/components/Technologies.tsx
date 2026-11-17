@@ -3,19 +3,19 @@ import { motion } from 'framer-motion';
 const techCategories = [
 {
   title: 'Languages',
-  skills: ['Python', 'JavaScript', 'TypeScript', 'Java', 'JVM', 'C#', 'C', 'R', 'SQL', 'PL/pgSQL', 'Lua', 'x86-64 Assembly']
+  skills: ['Python', 'JavaScript', 'TypeScript', 'Java', 'Kotlin', 'C#', 'C', 'R', 'SQL', 'PL/pgSQL', 'Lua', 'x86-64 Assembly']
 },
 {
   title: 'Frontend',
-  skills: ['React', 'Vite', 'Tailwind CSS', 'Framer Motion', 'React Router', 'Recharts', 'Axios', 'ESLint']
+  skills: ['React', 'React Native', 'Next.js', 'Vite', 'Tailwind CSS', 'Framer Motion', 'React Router', 'Recharts', 'Axios', 'ESLint']
 },
 {
   title: 'Backend',
-  skills: ['FastAPI', 'Uvicorn', 'Pydantic', 'Spring Boot', 'Spring Security', 'Node.js', 'Express.js', 'Django']
+  skills: ['FastAPI', 'Uvicorn', 'Pydantic', 'Spring Boot', 'Spring Security', 'Node.js', 'Express.js', 'Django', 'Django REST Framework']
 },
 {
   title: 'Databases & Caching',
-  skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'SQLite', 'PgBouncer']
+  skills: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'SQLite', 'PgBouncer', 'localStorage']
 },
 {
   title: 'Data & ORM',
@@ -31,7 +31,7 @@ const techCategories = [
 },
 {
   title: 'DevOps',
-  skills: ['Docker', 'Docker Compose', 'GitHub Actions', 'Gradle', 'Git', 'CI/CD']
+  skills: ['Docker', 'Docker Compose', 'GitHub Actions', 'Gradle', 'Git', 'CI/CD', 'Service Workers', 'PWA']
 },
 {
   title: 'Observability',
@@ -39,15 +39,15 @@ const techCategories = [
 },
 {
   title: 'Testing',
-  skills: ['pytest', 'pytest-asyncio', 'httpx', 'Vitest', 'Playwright', 'JUnit 5', 'Testcontainers']
+  skills: ['pytest', 'pytest-asyncio', 'httpx', 'Vitest', 'Playwright', 'Testing Library', 'Jest', 'JUnit 5', 'Testcontainers', 'fast-check', 'Property-Based Testing']
 },
 {
   title: 'Cloud & Hosting',
-  skills: ['Cloudflare Workers', 'AWS', 'Heroku', 'DigitalOcean', 'PythonAnywhere']
+  skills: ['AWS', 'Vercel', 'Render', 'Cloudflare Pages', 'Heroku', 'DigitalOcean']
 },
 {
   title: 'Data & ML',
-  skills: ['pandas', 'NumPy', 'scikit-learn', 'tidymodels', 'matplotlib', 'seaborn', 'Jupyter Notebook', 'R Markdown', 'TensorFlow', 'OpenCV']
+  skills: ['pandas', 'NumPy', 'scikit-learn', 'tidymodels', 'matplotlib', 'seaborn', 'Jupyter Notebook', 'R Markdown', 'TensorFlow', 'Keras', 'OpenCV', 'ONNX Runtime']
 },
 {
   title: 'ML Techniques',
@@ -58,8 +58,12 @@ const techCategories = [
   skills: ['PyQt6', 'Qt', 'WinForms', 'WebView2']
 },
 {
-  title: 'Other Tools',
-  skills: ['Figma', 'Graphviz', 'NASM', 'Makefile']
+  title: 'Mobile & Media',
+  skills: ['Android', 'Kotlin', 'FFmpeg', 'Media3', 'ExoPlayer', 'yt-dlp', 'Chaquopy']
+},
+{
+  title: 'Web & Other Tools',
+  skills: ['Web Speech API', 'SpeechRecognition', 'SpeechSynthesis', 'MCP Server', 'Kiro API', 'Graphviz', 'NASM', 'Makefile']
 }];
 
 export function Technologies() {

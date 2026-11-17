@@ -95,19 +95,19 @@ const projectDefinitions: Project[] = [
   {
     name: 'Cabine de Français',
     description: 'A speech-driven French learning platform built with React and the Web Speech API, designed to prepare learners for TCF Canada and TEF Canada proficiency exams. Features 989 vocabulary entries across three proficiency tiers (A1–C2 based on CEFR), 26 grammar chapters with interactive quizzes, exam-practice modes matching official formats, pre-rendered native-quality audio clips, real-time pronunciation scoring via speech recognition with fuzzy matching, and a Foundation Score dashboard mapped to Canadian Language Benchmarks. Fully client-side with offline support via service workers.',
-    tags: ['React 19', 'Vite', 'TypeScript', 'Web Speech API', 'SpeechRecognition', 'SpeechSynthesis', 'localStorage', 'marked', 'Service Workers', 'PWA', 'Vitest', 'Testing Library', 'oxlint'],
+    tags: ['React 19', 'Vite', 'TypeScript', 'Web Speech API', 'SpeechRecognition', 'SpeechSynthesis', 'Fuzzy Matching', 'CEFR', 'localStorage', 'marked', 'Service Workers', 'Offline Support', 'PWA', 'Vitest', 'Testing Library', 'oxlint'],
     githubUrl: 'https://github.com/oscaroguledo/cabine-de-francais',
   },
   {
     name: 'G1 Guru',
     description: 'A free Ontario G1 knowledge test practice app with 365 questions, a timed mock exam, road-sign quiz, and progress tracking. Fully offline-capable with 100% test coverage, deployed as a progressive web app. Built from the Official MTO Driver\'s Handbook, features spaced-review weak-question drilling, exam history tracking, and responsive design that works on mobile and desktop.',
-    tags: ['React 19', 'Vite', 'JavaScript', 'Vitest', 'Testing Library', 'vite-plugin-pwa', 'Service Workers', 'PWA', 'localStorage', 'GitHub Actions', 'Responsive Design'],
+    tags: ['React 19', 'Vite', 'JavaScript', '365 Practice Questions', 'Spaced Review', 'Vitest', 'Testing Library', 'vite-plugin-pwa', 'Service Workers', 'PWA', 'localStorage', 'GitHub Actions', 'Responsive Design'],
     githubUrl: 'https://github.com/oscaroguledo/G1-Guru',
   },
   {
     name: 'Necrolink',
     description: 'An AI-powered link checker that detects and resurrects dead and "zombie" links from documents using the Internet Archive\'s Wayback Machine. Accepts PDF, Markdown, and web pages, classifies links into ghosts (404), lost souls (unrecoverable), zombies (content-drifted), and living. Replaces broken links with archived snapshots and flags zombie links with AI-detected drift explanations. Built with Next.js, features property-based testing with fast-check and custom MCP server integration.',
-    tags: ['Next.js 14', 'React', 'TypeScript', 'Node.js', 'Kiro API', 'Internet Archive Wayback Machine', 'fast-check', 'Property-Based Testing', 'Vitest', 'MCP Server', 'AWS', 'Vercel'],
+    tags: ['Next.js 14', 'React', 'TypeScript', 'Node.js', 'PDF', 'Markdown', 'Kiro API', 'Internet Archive Wayback Machine', 'fast-check', 'Property-Based Testing', 'Vitest', 'MCP Server', 'AWS', 'Vercel'],
     githubUrl: 'https://github.com/oscaroguledo/Necrolink',
   },
   {
@@ -143,7 +143,7 @@ const projectDefinitions: Project[] = [
   {
     name: 'W Play',
     description: 'An Android music player and downloader built with React Native. Downloads audio via yt-dlp, converts to tagged MP3 with cover art, auto-detects genres using an on-device ML model (Discogs-EffNet), and provides background playback with notification and lock-screen controls. Everything runs on-device with no backend server or account required.',
-    tags: ['React Native', 'TypeScript', 'Kotlin', 'Android', 'yt-dlp', 'FFmpeg', 'Media3', 'ExoPlayer', 'ONNX Runtime', 'yt-dlp-android', 'Chaquopy', 'Jest', 'GitHub Actions', 'Gradle'],
+    tags: ['React Native', 'TypeScript', 'Kotlin', 'Android', 'yt-dlp', 'FFmpeg', 'MP3 Metadata', 'Media3', 'ExoPlayer', 'ONNX Runtime', 'Discogs-EffNet', 'yt-dlp-android', 'Chaquopy', 'Background Playback', 'Jest', 'GitHub Actions', 'Gradle'],
     githubUrl: 'https://github.com/oscaroguledo/wplay',
   }
 ];
